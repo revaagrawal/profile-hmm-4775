@@ -246,9 +246,16 @@ def main():
     row_sums = i_emissions.sum(axis=1, keepdims=True)
     i_emission_probs = i_emissions / row_sums
 
-    for i in range(len(m_emission_probs)):
-        print(i)
-        print(i_emission_probs[i])
+    '''
+    NOTES:
+    - transition probabilities:
+        - row: previous
+        - col: next
+        - indexing is as follows: S, I_0, M_1, D_1, I_1, M_2, D_2, I_2, ...
+    - emission probabilities:
+        - m_emissions first column 0 because there is no M_0
+        - i_emissions has extra col (0th column) for I_0
+    '''
 
 if __name__ == '__main__':
     main()
