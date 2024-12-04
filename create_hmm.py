@@ -54,7 +54,8 @@ def get_state(base):
     
     return state
 
-def get_transition_probabilities(sequences, insertions, deletions, max_length):
+
+def get_transition_probabilities(sequences, insertions, deletions, max_length, sigma):
     num = (max_length * 3) + 3
     print(num)
     table = np.zeros((num, num))
@@ -66,7 +67,13 @@ def get_transition_probabilities(sequences, insertions, deletions, max_length):
             left = start_idx + j
             end_idx = ((i+1)*3)+1
             for end in range(end_idx, min(len(table), end_idx+3)):
-                table[left][end] = 1
+                table[left][end] = sigma
+
+
+    table[1][2] += sigma # I -> M0
+    table[1][3] += sigma # I -> D0
+    table[1][1] += sigma # I -> I
+
 
     for seq in sequences:
         prev_state = None
@@ -139,7 +146,7 @@ def get_transition_probabilities(sequences, insertions, deletions, max_length):
                 elif cur_state == "I":
                     start_index += 3
                 table[start_index][-1] += 1
-        
+                
     return table
 
 def get_emission_probabilities(sequences, insertions, deletions, max_length):
@@ -197,10 +204,34 @@ def get_emission_probabilities(sequences, insertions, deletions, max_length):
     
 def create_hmm():
     return
-    
+
+
+def normalize_matrix(matrix):
+    '''
+    Given a probability matrix, normalizes it such that each row adds to 1.
+    If a row other thtan the last one is all 0s, raise an error.
+    '''
+    row_sums = matrix.sum(axis=1, keepdims=True)
+    print(f'row_sums: \n{row_sums}\n')
+
+    zero_rows = (row_sums == 0).flatten() 
+
+    if any(zero_rows[:-1]): 
+        raise ValueError(f"only last row should have all 0s (i htink).")
+
+    if zero_rows[-1]: 
+        row_sums[-1] = 1
+
+    norm_probs = matrix / row_sums
+    return norm_probs
+
+
 def main():
     parser = argparse.ArgumentParser(description='description')
-    parser.add_argument('-f', action="store", dest="f", type=str, default='motif1.fasta')
+    parser.add_argument('-f', action="store", dest="f", type=str, default='sample.fasta')
+
+    # TODO: change the pseudocount number or make it into a parameter
+    sigma = .01
 
     args = parser.parse_args()
     sequences = read_fasta(args.f)
@@ -233,15 +264,24 @@ def main():
 
     # filtered_sequences = filter_sequences(sequences, removed_cols)
 
+    # determines the max number of match states (AKA how many columns in the core motif)
     max_length = len(sequences[0]) - len(insertions)
-    transition_matrix = get_transition_probabilities(sequences, insertions, deletions, max_length)
+    transition_matrix = get_transition_probabilities(sequences, insertions, deletions, max_length, sigma)
 
-    row_sums = transition_matrix.sum(axis=1, keepdims=True)
-    transition_probs = transition_matrix / row_sums
+    # print(f'transition matrix before normalization:')
+    # states = ['S, I'] + [f'I{i}, M{i}, D{i}' for i in range(max_length)] + ['End']
+    # print(", ".join(states))
+    # print(f'{transition_matrix}\n')
+    # transition_probs = transition_matrix / row_sums
+    transition_probs = normalize_matrix(transition_matrix)
+    states = ['S, I'] + [f'I{i}, M{i}, D{i}' for i in range(max_length)] + ['End']
+    print(", ".join(states))
+    print(f'{transition_probs}\n')
 
     m_emissions, i_emissions = get_emission_probabilities(sequences, insertions, deletions, max_length)
     row_sums = m_emissions.sum(axis=1, keepdims=True)
     m_emission_probs = m_emissions / row_sums
+    # print(f'{m_emission_probs}\n')
 
     row_sums = i_emissions.sum(axis=1, keepdims=True)
     i_emission_probs = i_emissions / row_sums
