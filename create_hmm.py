@@ -224,6 +224,9 @@ def normalize_matrix(matrix):
         row_sums[-1] = 1
 
     norm_probs = matrix / row_sums
+    
+    # NOTE: when checking comment out the following to see it in non log
+    # norm_probs = np.log(norm_probs)
     return norm_probs
 
 def build_profile(fasta_file, sigma):
