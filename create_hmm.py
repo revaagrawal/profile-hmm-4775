@@ -1,5 +1,6 @@
 import argparse
 import numpy as np
+import pickle
 
 def read_fasta(filename):
     with open(filename, "r") as f:
@@ -225,16 +226,11 @@ def normalize_matrix(matrix):
     norm_probs = matrix / row_sums
     return norm_probs
 
-
-def main():
-    parser = argparse.ArgumentParser(description='description')
-    parser.add_argument('-f', action="store", dest="f", type=str, default='sample.fasta')
-
-    # TODO: change the pseudocount number or make it into a parameter
-    sigma = .01
-
-    args = parser.parse_args()
-    sequences = read_fasta(args.f)
+def build_profile(fasta_file, sigma):
+    '''
+    Builds the profle HMM and then saves it into a pkl file (Python object)
+    '''
+    sequences = read_fasta(fasta_file)
     for s in sequences:
         print(s)
 
@@ -281,10 +277,11 @@ def main():
     m_emissions, i_emissions = get_emission_probabilities(sequences, insertions, deletions, max_length)
     row_sums = m_emissions.sum(axis=1, keepdims=True)
     m_emission_probs = m_emissions / row_sums
-    # print(f'{m_emission_probs}\n')
+    print(f'{m_emission_probs}\n')
 
     row_sums = i_emissions.sum(axis=1, keepdims=True)
     i_emission_probs = i_emissions / row_sums
+    print(f'{i_emission_probs}\n')
 
     '''
     NOTES:
@@ -292,10 +289,31 @@ def main():
         - row: previous
         - col: next
         - indexing is as follows: S, I_0, M_1, D_1, I_1, M_2, D_2, I_2, ...
+        - last row is all 0s.
     - emission probabilities:
         - m_emissions first column 0 because there is no M_0
         - i_emissions has extra col (0th column) for I_0
     '''
+    hmm_model = {
+        "transition_probs": transition_probs,
+        "m_emission_probs": m_emission_probs,
+        "i_emission_probs": i_emission_probs,
+        "max_length": max_length,
+    }
+    with open("hmm_model.pkl", "wb") as f:
+        pickle.dump(hmm_model, f)
+
+    print("Profile HMM built and saved to 'hmm_model.pkl'")
+
+
+def main():
+    parser = argparse.ArgumentParser(description='Build Profile HMM')
+    parser.add_argument('-f', action="store", dest="f", type=str, default='sample.fasta')
+    parser.add_argument("-sigma", default=0.01, type=float, help="Pseudocount value")
+
+    args = parser.parse_args()
+    build_profile(args.f, args.sigma)
+    
 
 if __name__ == '__main__':
     main()
