@@ -2,6 +2,16 @@ import argparse
 import numpy as np
 import pickle
 
+
+def preprocess_probabilities(matrix):
+    """
+    Converts a matrix to log-scale, ignoring 0 entries (keeps them as 0).
+    """
+    log_matrix = np.zeros_like(matrix) 
+    nonzero_mask = matrix > 0
+    log_matrix[nonzero_mask] = np.log(matrix[nonzero_mask]) 
+    return log_matrix
+
 def score_sequence(query, transition_probs, m_emission_probs, i_emission_probs, max_length):
     """
     Scores a query protein sequence against the HMM model using the Viterbi algorithm,
@@ -12,6 +22,10 @@ def score_sequence(query, transition_probs, m_emission_probs, i_emission_probs, 
     # transition_probs = np.log(transition_probs)
     # m_emission_probs = np.log(m_emission_probs)
     # i_emission_probs = np.log(i_emission_probs)
+
+    transition_probs = preprocess_probabilities(transition_probs)
+    m_emission_probs = preprocess_probabilities(m_emission_probs)
+    i_emission_probs = preprocess_probabilities(i_emission_probs)
 
     n = len(query)
     amino_to_index = {

@@ -311,7 +311,7 @@ def build_profile(fasta_file, sigma):
 
 def main():
     parser = argparse.ArgumentParser(description='Build Profile HMM')
-    parser.add_argument('-f', action="store", dest="f", type=str, default='sample.fasta')
+    parser.add_argument('-f', action="store", dest="f", type=str, default='test/sample.fasta')
     parser.add_argument("-sigma", default=0.01, type=float, help="Pseudocount value")
 
     args = parser.parse_args()
