@@ -27,81 +27,178 @@ def score_sequence(query, transition_probs, m_emission_probs, i_emission_probs, 
     m_emission_probs = preprocess_probabilities(m_emission_probs)
     i_emission_probs = preprocess_probabilities(i_emission_probs)
 
-    n = len(query)
-    m = {
-        "M": [float("-inf")] * (n + 1),
-        "I": [float("-inf")] * (n + 1),
-        "D": [float("-inf")] * (n + 1)
-    }
+    print(m_emission_probs[15])
 
-    amino_to_index = {
-        "A": 0, "R": 1, "N": 2, "D": 3, "C": 4, "Q": 5, "E": 6, "G": 7, 
-        "H": 8, "I": 9, "L": 10, "K": 11, "M": 12, "F": 13, "P": 14, 
-        "S": 15, "T": 16, "W": 17, "Y": 18, "V": 19
-    }
+    n = max_length
+    max_score = float('-inf')
+    start_index = None
 
-    m["M"][0] = 0
+    for start in range(len(query)):
+        new_query = query[start:start+max_length]
 
-    i = 0
-    state = 0
-    while i < min(max_length, n):
-        if i == 0:
-            # start with match state
+        if len(new_query) < max_length and start != 0:
+            break
+
+        m = {
+            "M": [float("-inf")] * (n + 1),
+            "I": [float("-inf")] * (n + 1),
+            "D": [float("-inf")] * (n + 1)
+        }
+
+        amino_to_index = {
+            "A": 0, "R": 1, "N": 2, "D": 3, "C": 4, "Q": 5, "E": 6, "G": 7, 
+            "H": 8, "I": 9, "L": 10, "K": 11, "M": 12, "F": 13, "P": 14, 
+            "S": 15, "T": 16, "W": 17, "Y": 18, "V": 19
+        }
+
+        m["M"][0] = 0
+
+        i = 0
+        state = 0
+        while i < min(max_length, len(query)):
+            if i == 0:
+                # start with match state
+                i += 1
+                state += 1
+                continue
+
+            # find next end_state
+            for end_state in ["M", "I", "D"]:
+                for prev_state in ["M", "I", "D"]:
+                    # find transition probability
+                    if end_state == "I":
+                        end_index = (3 * state) + 1
+                    elif end_state == "M":
+                        end_index = (3 * state) + 2
+                    elif end_state == "D":
+                        end_index = (3 * state) + 3
+
+                    if prev_state == "M":
+                        prev_index = (3 * (state-1)) + 2
+                    elif prev_state == "D":
+                        prev_index = (3 * (state-1)) + 3
+                    elif prev_state == "I":
+                        prev_index = (3 * (state)) + 1
+                    
+                    transition_prob = transition_probs[prev_index][end_index]
+
+                    # find emission probability
+                    amino = query[i]
+                    amino_acid = amino_to_index[amino]
+                    if end_state == "M":
+                        emission_prob = m_emission_probs[state+1][amino_acid]
+                    elif end_state == "I":
+                        emission_prob = i_emission_probs[state][amino_acid]
+                    
+                    prob = m[prev_state][i-1] + transition_prob + emission_prob
+
+                    if prob > m[end_state][i]:
+                        m[end_state][i] = prob
             i += 1
-            state += 1
-        cur_state = None
-        # find next end_state
-        for end_state in ["M", "I", "D"]:
-            for prev_state in ["M", "I", "D"]:
-                # find transition probability
-                if end_state == "I":
-                    end_index = (3 * state) + 1
-                elif end_state == "M":
-                    end_index = (3 * state) + 2
-                elif end_state == "D":
-                    end_index = (3 * state) + 3
 
-                if prev_state == "M":
-                    prev_index = (3 * (state-1)) + 2
-                elif prev_state == "D":
-                    prev_index = (3 * (state-1)) + 3
-                elif prev_state == "I":
-                    prev_index = (3 * (state)) + 1
+        i = len(m["M"]) - 1
+        while m["M"][i] == float('-inf') and i > -1:
+            i -= 1
+        m_max = m["M"][i]
+
+        i = len(m["I"]) - 1
+        while m["I"][i] == float('-inf') and i > -1:
+            i -= 1
+        i_max = m["I"][i]
+
+        i = len(m["D"]) - 1
+        while m["D"][i] == float('-inf') and i > -1:
+            i -= 1
+        d_max = m["D"][i]
+
+        # print(m_max, i_max, d_max)
+        score = max(m_max, i_max, d_max)
+
+        if score > max_score:
+            max_score = score
+            start_index = start
+        
+        # if start == 230:
+        #     print(score)
+        #     print(new_query)
+        
+    print("start", start_index)
+    return max_score
+
+    # m = {
+    #     "M": [float("-inf")] * (n + 1),
+    #     "I": [float("-inf")] * (n + 1),
+    #     "D": [float("-inf")] * (n + 1)
+    # }
+
+    # amino_to_index = {
+    #     "A": 0, "R": 1, "N": 2, "D": 3, "C": 4, "Q": 5, "E": 6, "G": 7, 
+    #     "H": 8, "I": 9, "L": 10, "K": 11, "M": 12, "F": 13, "P": 14, 
+    #     "S": 15, "T": 16, "W": 17, "Y": 18, "V": 19
+    # }
+
+    # m["M"][0] = 0
+
+    # i = 0
+    # state = 0
+    # while i < min(max_length, n):
+    #     if i == 0:
+    #         # start with match state
+    #         i += 1
+    #         state += 1
+    #     cur_state = None
+    #     # find next end_state
+    #     for end_state in ["M", "I", "D"]:
+    #         for prev_state in ["M", "I", "D"]:
+    #             # find transition probability
+    #             if end_state == "I":
+    #                 end_index = (3 * state) + 1
+    #             elif end_state == "M":
+    #                 end_index = (3 * state) + 2
+    #             elif end_state == "D":
+    #                 end_index = (3 * state) + 3
+
+    #             if prev_state == "M":
+    #                 prev_index = (3 * (state-1)) + 2
+    #             elif prev_state == "D":
+    #                 prev_index = (3 * (state-1)) + 3
+    #             elif prev_state == "I":
+    #                 prev_index = (3 * (state)) + 1
                 
-                transition_prob = transition_probs[prev_index][end_index]
+    #             transition_prob = transition_probs[prev_index][end_index]
 
-                # find emission probability
-                amino = query[i]
-                amino_acid = amino_to_index[amino]
-                if end_state == "M":
-                    emission_prob = m_emission_probs[state+1][amino_acid]
-                elif end_state == "I":
-                    emission_prob = i_emission_probs[state][amino_acid]
+    #             # find emission probability
+    #             amino = query[i]
+    #             amino_acid = amino_to_index[amino]
+    #             if end_state == "M":
+    #                 emission_prob = m_emission_probs[state+1][amino_acid]
+    #             elif end_state == "I":
+    #                 emission_prob = i_emission_probs[state][amino_acid]
                 
-                prob = m[prev_state][i-1] + transition_prob + emission_prob
+    #             prob = m[prev_state][i-1] + transition_prob + emission_prob
 
-                if prob > m[end_state][i]:
-                    cur_state = end_state
-                    m[end_state][i] = prob
-        if cur_state != "D":
-            i += 1
+    #             if prob > m[end_state][i]:
+    #                 cur_state = end_state
+    #                 m[end_state][i] = prob
+    #     if cur_state != "D":
+    #         i += 1
 
-    i = len(m["M"]) - 1
-    while m["M"][i] == float('-inf') and i > -1:
-        i -= 1
-    m_max = m["M"][i]
+    # i = len(m["M"]) - 1
+    # while m["M"][i] == float('-inf') and i > -1:
+    #     i -= 1
+    # m_max = m["M"][i]
 
-    i = len(m["I"]) - 1
-    while m["I"][i] == float('-inf') and i > -1:
-        i -= 1
-    i_max = m["I"][i]
+    # i = len(m["I"]) - 1
+    # while m["I"][i] == float('-inf') and i > -1:
+    #     i -= 1
+    # i_max = m["I"][i]
 
-    i = len(m["D"]) - 1
-    while m["D"][i] == float('-inf') and i > -1:
-        i -= 1
-    d_max = m["D"][i]
-    score = max(m_max, i_max, d_max)
-    return score
+    # i = len(m["D"]) - 1
+    # while m["D"][i] == float('-inf') and i > -1:
+    #     i -= 1
+    # d_max = m["D"][i]
+    # score = max(m_max, i_max, d_max)
+    # return score
 
     # m = {
     #     "M": [[float("-inf")] * (n + 1)],
