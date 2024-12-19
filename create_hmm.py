@@ -70,6 +70,9 @@ def get_transition_probabilities(sequences, insertions, deletions, max_length, s
             for end in range(end_idx, min(len(table), end_idx+3)):
                 table[left][end] = sigma
 
+    table[0][1] += sigma
+    table[0][2] += sigma
+    table[0][3] += sigma
 
     table[1][2] += sigma # I -> M0
     table[1][3] += sigma # I -> D0
@@ -175,7 +178,8 @@ def get_emission_probabilities(sequences, insertions, deletions, max_length):
     }
     
     m_emissions = np.ones((max_length+1,20))
-    m_emissions[:,0] = 0
+    print(m_emissions)
+    m_emissions[0] = 0
     i_emissions = np.ones((max_length+1,20))
 
     for seq in sequences:
@@ -201,6 +205,8 @@ def get_emission_probabilities(sequences, insertions, deletions, max_length):
             elif cur_state == "M":
                 m_emissions[state][amino_acids[aa]] += 1
         
+    print("m_emission", m_emissions)
+    print("i_emission", i_emissions)
     return m_emissions, i_emissions 
     
 def create_hmm():
@@ -213,7 +219,7 @@ def normalize_matrix(matrix):
     If a row other thtan the last one is all 0s, raise an error.
     '''
     row_sums = matrix.sum(axis=1, keepdims=True)
-    print(f'row_sums: \n{row_sums}\n')
+    # print(f'row_sums: \n{row_sums}\n')
 
     zero_rows = (row_sums == 0).flatten() 
 
@@ -274,17 +280,17 @@ def build_profile(fasta_file, sigma):
     # transition_probs = transition_matrix / row_sums
     transition_probs = normalize_matrix(transition_matrix)
     states = ['S, I'] + [f'I{i}, M{i}, D{i}' for i in range(max_length)] + ['End']
-    print(", ".join(states))
-    print(f'{transition_probs}\n')
+    # print(", ".join(states))
+    # print(f'{transition_probs}\n')
+    for row in transition_probs:
+        print(f"{row[0]:.5f}", f"{row[1]:.5f}", f"{row[2]:.5f}", f"{row[3]:.5f}", f"{row[4]:.5f}", f"{row[5]:.5f}", f"{row[6]:.5f}", f"{row[7]:.5f}")
 
     m_emissions, i_emissions = get_emission_probabilities(sequences, insertions, deletions, max_length)
     row_sums = m_emissions.sum(axis=1, keepdims=True)
     m_emission_probs = m_emissions / row_sums
-    print(f'{m_emission_probs}\n')
 
     row_sums = i_emissions.sum(axis=1, keepdims=True)
     i_emission_probs = i_emissions / row_sums
-    print(f'{i_emission_probs}\n')
 
     '''
     NOTES:
