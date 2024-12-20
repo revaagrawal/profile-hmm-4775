@@ -2,6 +2,22 @@ import argparse
 import numpy as np
 import pickle
 
+"""
+run this through by the command:
+python create_hmm.py -f test/msa.fasta -sigma 0.01
+the arg -f is the training sequence (confirmed sequences in the igF family)
+the arg -sigma is the pseudocount
+
+will produce a 'package' containing the transition prob matrix, the match emission proabbilties, 
+and the insertion emission probabiltiies 
+for the transition probabilities: 
+    matrix[row][col] where row is the previous state and col is the next state 
+    and indexing is S, I_0, M_1, D_1, I_1, M_2, D_2, I_2 and last row is all 0s (cannot have any outgoing bc that is lasxt)
+emission probabilities:
+    m_emissions first column 0 because there is no M_0
+        - i_emissions has extra col (0th column) for I_0
+"""
+
 def read_fasta(filename):
     with open(filename, "r") as f:
         output = []
