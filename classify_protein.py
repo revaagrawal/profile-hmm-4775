@@ -60,7 +60,7 @@ def score_sequence(query, transition_probs, m_emission_probs, i_emission_probs, 
     # print(f'i_emiss: {i_emiss_probs}')
 
 
-    # print(f'dimensions trans: {trans_probs.shape}')
+    print(f'dimensions trans: {trans_probs.shape}')
     # print(f'dimensions m_emiss: {m_emiss_probs.shape}')
     # print(f'dimensions i_emiss: {i_emiss_probs.shape}')
 
@@ -85,6 +85,11 @@ def score_sequence(query, transition_probs, m_emission_probs, i_emission_probs, 
         "I": [float("-inf")] * (seq_len+ 1),
         "D": [float("-inf")] * (seq_len + 1)
     }
+    # m = {
+    #     "M": [float("-inf")] * (max_length+ 1),
+    #     "I": [float("-inf")] * (max_length+ 1),
+    #     "D": [float("-inf")] * (max_length + 1)
+    # }
 
     print(f'a seq length: {len(m["M"])}')
 
@@ -132,9 +137,9 @@ def score_sequence(query, transition_probs, m_emission_probs, i_emission_probs, 
     # iterate through each amino acid in the query sequence (besides the very first one w/ index 0)
     # for i in range(2, n+1):
     # for i in range(2, min(n, max_length) + 1):
+    j = 2
     for i in range(2, max_length + 1): # the algo should auto-deal w/ deletions so does not matter if len(query) < max_length
         # the current emission/amino acid converted ot number form
-        print(f'curr time step is t = {i}')
 
         curr_match_index = 3*i - 1
         curr_ins_index = 3*i + 1
@@ -144,15 +149,183 @@ def score_sequence(query, transition_probs, m_emission_probs, i_emission_probs, 
         prev_ins_index = 3*(i-1) + 1
         prev_del_index = 3*(i-1)
 
+        # curr_match_index = 3*j - 1
+        # curr_ins_index = 3*j + 1
+        # curr_del_index = 3*j
+    
+        # prev_match_index = 3*(j-1) - 1
+        # prev_ins_index = 3*(j-1) + 1
+        # prev_del_index = 3*(j-1)
 
-        if (i > len(query)): 
-            print("149")
-            # deletion, has no emission! does not have emission temr
-            # also notice how it builds off the curr pos of query?
+        # insertions to turn query into length of max_length
+        # if (i > len(query)): 
+        #     print(f'curr time step is t = {i} inserting at the end')    
+    
+        #     curr_match_index = 3*i - 1
+        #     curr_ins_index = 3*i + 1
+        #     curr_del_index = 3*i
+        
+        #     prev_match_index = 3*(i-1) - 1
+        #     prev_ins_index = 3*(i-1) + 1
+        #     prev_del_index = 3*(i-1)
+
+        #     print(f'{i}th row of i {i_emiss_probs[i]}')
+        #     curr_ins_emiss = max(i_emiss_probs[i])
+        #     print(f'177 curr ins index {curr_ins_index}')
+
+        #     v_m_to_i = m["M"][i-1] + trans_probs[prev_match_index][curr_ins_index]
+        #     print(f'prev match index {prev_match_index}')
+        #     print(f'total m{i-1} to i{i} : { m["M"][i-1]} + {trans_probs[prev_match_index][curr_ins_index]}')
+
+        #     v_i_to_i = m["I"][i-1] + trans_probs[prev_ins_index][curr_ins_index]
+        #     print(f'prev ins index {prev_ins_index}')
+        #     print(f'total i{i-1} to i{i} : { m["I"][i-1]} + {trans_probs[prev_ins_index][curr_ins_index]}')
+
+        #     v_d_to_i = m["D"][i-1] + trans_probs[curr_del_index][curr_ins_index]
+        #     print(f'total d{i-1} to i{i} : { m["D"][i-1]} + {trans_probs[prev_del_index][curr_ins_index]}')
+
+            
+
+        #     m["I"][i] = curr_ins_emiss + max(v_m_to_i, v_i_to_i, v_d_to_i)
+        #     print(f'm["I"][{i}] = {curr_ins_emiss} + {max(v_m_to_i, v_i_to_i, v_d_to_i)}')
+        #     if max(v_m_to_i, v_i_to_i, v_d_to_i) == v_m_to_i:
+        #         tb["I"][i] = "M"
+        #     elif max(v_m_to_i, v_i_to_i, v_d_to_i) == v_i_to_i:
+        #         tb["I"][i] = "I"
+        #     else:
+        #         tb["I"][i] = "D"
+
+            
+        # else:
+        print(f'\ncurr time step is t = {i}')
+        curr_match_index = 3*i - 1
+        curr_ins_index = 3*i + 1
+        curr_del_index = 3*i
+    
+        prev_match_index = 3*(i-1) - 1
+        prev_ins_index = 3*(i-1) + 1
+        prev_del_index = 3*(i-1)
+
+    
+
+        # TODO: need to actually calc instead of making all same freq
+        # q_aa = np.log(1/20)
+
+        # match
+        # current emission term relative to background (in log term so subtration!)
+        # print(f'M_{i}, x_i: {x_i} when the shape is {m_emiss_probs.shape}')
+        # if (m_emiss_probs[i][x_i] < q_aa):
+        #     curr_match_emiss = m_emiss_probs[i][x_i] - q_aa
+        #     print(f'match emission @ {i}: {m_emiss_probs[i][x_i]} + {q_aa}')
+        # else:
+        #     curr_match_emiss = m_emiss_probs[i][x_i]
+        
+        if (i <= n):
+            x_i = amino_to_index[query[i-1]]
+
+            curr_match_emiss = m_emiss_probs[i][x_i]
+        else: 
+            curr_match_emiss = max(m_emiss_probs[i])
+
+        v_m_to_m =  m["M"][i-1]  + trans_probs[prev_match_index][curr_match_index]
+        # print(f'viterbi at {i-1} at m: { m["M"][i-1]}')
+        # print(f'm{i-1} to m_{i} ({prev_match_index} to {curr_match_index}) : {trans_probs[prev_match_index][curr_match_index]}\n')
+        # print(f'total m{i-1} to m{i} : { m["M"][i-1]} + { trans_probs[prev_match_index][curr_match_index]}')
+        # print(f'm to m_{i}: { m["M"][i-1]  + trans_probs[prev_match_index][curr_match_index]}\n')
+        v_i_to_m =  m["I"][i-1] + trans_probs[prev_ins_index][curr_match_index]
+        # print(f'i{i-1} to m{i} : { m["I"][i-1]} + { trans_probs[prev_ins_index][curr_match_index]}')
+        v_d_to_m =  m["D"][i-1] +  trans_probs[prev_del_index][curr_match_index]
+        print(f'd{i-1} to m{i} : {  m["D"][i-1]} + {trans_probs[prev_del_index][curr_match_index]}')
+
+
+        # print(f'prev {i-1} to match at {i}: {max(v_m_to_m, v_i_to_m, v_d_to_m)}\n')
+        # index for seq pos pos i (current) at each states
+
+
+        m["M"][i] = curr_match_emiss + max(v_m_to_m, v_i_to_m, v_d_to_m)
+        if max(v_m_to_m, v_i_to_m, v_d_to_m) == v_m_to_m:
+            tb["M"][i] = "M"
+            print("line 200")
+        elif max(v_m_to_m, v_i_to_m, v_d_to_m) == v_i_to_m:
+            tb["M"][i] = "I"
+            print("line 203")
+        else: 
+            tb["M"][i] = "D"
+
+
+        # insertion. NOTE: that if you look at the graph, states that GO TO INSERTIONS
+        # all have the same time step indexing as the insertion. but if you look at the other two
+        # sections that GO TO matches and deletions, the curr state is based on the previous time step
+
+        # if (i_emiss_probs[i][x_i] < q_aa):
+        #     curr_ins_emiss = m_emiss_probs[i][x_i] - q_aa
+        # else:
+        #     curr_ins_emiss = m_emiss_probs[i][x_i]
+
+        curr_ins_emiss = max(i_emiss_probs[i])
+        print(f'266 ins emission row {i} ={ i_emiss_probs[i]}, {max(i_emiss_probs[i])}')
+
+        v_m_to_i = m["M"][i-1] + trans_probs[prev_match_index][curr_ins_index]
+        print(f'm{i-1} to i{i} : {m["M"][i-1] } + {trans_probs[prev_match_index][curr_ins_index]}')
+        v_i_to_i = m["I"][i-1] + trans_probs[prev_ins_index][curr_ins_index]
+        print(f'ins index: {curr_ins_index}')
+        print(f'i{i-1} to i{i} : { m["I"][i-1]} + { trans_probs[prev_ins_index][curr_ins_index]}')
+        v_d_to_i = m["D"][i-1] + trans_probs[prev_del_index][curr_ins_index]
+
+        m["I"][i] = curr_ins_emiss + max(v_m_to_i, v_i_to_i, v_d_to_i)
+        print(f"276 m['I'][{i}] = {curr_ins_emiss} + {max(v_m_to_i, v_i_to_i, v_d_to_i)}")
+        print(f'277 {max(v_m_to_i, v_i_to_i, v_d_to_i)}, m: {v_m_to_i} vs i: {v_i_to_i}')
+        if max(v_m_to_i, v_i_to_i, v_d_to_i) == v_m_to_i:
+            tb["I"][i] = "M"
+            print("line 225")
+        elif max(v_m_to_i, v_i_to_i, v_d_to_i) == v_i_to_i:
+            tb["I"][i] = "I"
+            print("282")
+        else:
+            tb["I"][i] = "D"
+
+
+
+        # deletion, has no emission! does not have emission temr
+        # also notice how it builds off the curr pos of query?
+        v_m_to_d = m["M"][i] + trans_probs[prev_match_index][curr_del_index]
+        print(f"m{i-1} to d{i} = {m['M'][i]} + {trans_probs[prev_match_index][curr_del_index]}")
+        v_i_to_d = m["I"][i] + trans_probs[prev_ins_index][curr_del_index]
+        v_d_to_d = m["D"][i] + trans_probs[prev_del_index][curr_del_index]
+
+        m["D"][i] = max(v_m_to_d, v_i_to_d, v_d_to_d)
+        if m["D"][i] == v_m_to_d:
+            tb["D"][i] = "M"
+        elif m["D"][i] == v_i_to_d:
+            tb["D"][i] = "I"
+        else:
+            tb["D"][i] = "D"
+
+        j += 1
+        print(f'tb at time {i} is {tb}')
+        print(f'm at time {i} is {m}\n')
+
+
+    # handle the case where the query sequence is longer than max_length, 
+    # meaning that deletions occurred before the end
+    if n > max_length:
+        for i in range(max_length + 1, n + 1):
+            x_i = amino_to_index[query[i - 1]]
+
+            curr_match_index = 3*i - 1
+            curr_ins_index = 3*i + 1
+            curr_del_index = 3*i
+        
+            prev_match_index = 3*(i-1) - 1
+            prev_ins_index = 3*(i-1) + 1
+            prev_del_index = 3*(i-1)
+            print(f'QUERY IS LONGER THAN MAX LENGTH curr time step is t = {i}')
             v_m_to_d = m["M"][i-1] + trans_probs[prev_match_index][curr_del_index]
             print(f'total m_{i-1} to d_{i} : { m["M"][i-1]} + {trans_probs[prev_match_index][curr_del_index]}')
             v_i_to_d = m["I"][i-1] + trans_probs[prev_ins_index][curr_del_index]
+            print(f'total i_{i-1} to d_{i} : { m["I"][i-1]} + {trans_probs[prev_ins_index][curr_del_index]}')
             v_d_to_d = m["D"][i-1] + trans_probs[prev_del_index][curr_del_index]
+            print(f'total d_{i-1} to d_{i} : { m["D"][i-1]} + {trans_probs[prev_del_index][curr_del_index]}')
 
             m["D"][i] = max( v_m_to_d, v_i_to_d, v_d_to_d)
             if m["D"][i] == v_m_to_d:
@@ -161,148 +334,7 @@ def score_sequence(query, transition_probs, m_emission_probs, i_emission_probs, 
                 tb["D"][i] = "I"
             else:
                 tb["D"][i] = "D"
-        else:
-
-            # index for seq pos pos i (current) at each states
-            x_i = amino_to_index[query[i-1]]
-        
-
-            # TODO: need to actually calc instead of making all same freq
-            # q_aa = np.log(1/20)
-
-            # match
-            # current emission term relative to background (in log term so subtration!)
-            # print(f'M_{i}, x_i: {x_i} when the shape is {m_emiss_probs.shape}')
-            # if (m_emiss_probs[i][x_i] < q_aa):
-            #     curr_match_emiss = m_emiss_probs[i][x_i] - q_aa
-            #     print(f'match emission @ {i}: {m_emiss_probs[i][x_i]} + {q_aa}')
-            # else:
-            #     curr_match_emiss = m_emiss_probs[i][x_i]
-            curr_match_emiss = m_emiss_probs[i][x_i]
-
-            v_m_to_m =  m["M"][i-1]  + trans_probs[prev_match_index][curr_match_index]
-            # print(f'viterbi at {i-1} at m: { m["M"][i-1]}')
-            # print(f'm{i-1} to m_{i} ({prev_match_index} to {curr_match_index}) : {trans_probs[prev_match_index][curr_match_index]}\n')
-            # print(f'total m{i-1} to m{i} : { m["M"][i-1]} + { trans_probs[prev_match_index][curr_match_index]}')
-            # print(f'm to m_{i}: { m["M"][i-1]  + trans_probs[prev_match_index][curr_match_index]}\n')
-            v_i_to_m =  m["I"][i-1] + trans_probs[prev_ins_index][curr_match_index]
-            # print(f'i{i-1} to m{i} : { m["I"][i-1]} + { trans_probs[prev_ins_index][curr_match_index]}')
-            v_d_to_m =  m["D"][i-1] +  trans_probs[prev_del_index][curr_match_index]
-            print(f'd{i-1} to m{i} : {  m["D"][i-1]} + {trans_probs[prev_del_index][curr_match_index]}\n')
-
-
-            print(f'prev {i-1} to match at {i}: {max(v_m_to_m, v_i_to_m, v_d_to_m)}\n')
-
-
-            m["M"][i] = curr_match_emiss + max(v_m_to_m, v_i_to_m, v_d_to_m)
-            if m["M"][i] == v_m_to_m:
-                tb["M"][i] = "M"
-                print("line 200")
-            elif m["M"][i] == v_i_to_m:
-                tb["M"][i] = "I"
-                print("line 203")
-            else: 
-                tb["M"][i] = "D"
-
-
-            # insertion. NOTE: that if you look at the graph, states that GO TO INSERTIONS
-            # all have the same time step indexing as the insertion. but if you look at the other two
-            # sections that GO TO matches and deletions, the curr state is based on the previous time step
-
-            # if (i_emiss_probs[i][x_i] < q_aa):
-            #     curr_ins_emiss = m_emiss_probs[i][x_i] - q_aa
-            # else:
-            #     curr_ins_emiss = m_emiss_probs[i][x_i]
-
-            curr_ins_emiss = i_emiss_probs[i][x_i]
-
-            v_m_to_i = m["M"][i-1] + trans_probs[curr_match_index][curr_ins_index]
-            v_i_to_i = m["I"][i-1] + trans_probs[curr_ins_index][curr_ins_index]
-            v_d_to_i = m["D"][i-1] + trans_probs[curr_del_index][curr_ins_index]
-
-            m["I"][i] = curr_ins_emiss + max(v_m_to_i, v_i_to_i, v_d_to_i)
-            if m["I"][i] == v_m_to_i:
-                tb["I"][i] = "M"
-                print("line 225")
-            elif m["I"][i] == v_i_to_i:
-                tb["I"][i] = "I"
-                print("line 228")
-            else:
-                tb["I"][i] = "D"
-
-
-
-            # deletion, has no emission! does not have emission temr
-            # also notice how it builds off the curr pos of query?
-            v_m_to_d = m["M"][i] + trans_probs[prev_match_index][curr_del_index]
-            v_i_to_d = m["I"][i] + trans_probs[prev_ins_index][curr_del_index]
-            v_d_to_d = m["D"][i] + trans_probs[prev_del_index][curr_del_index]
-
-            m["D"][i] = max(v_m_to_d, v_i_to_d, v_d_to_d)
-            if m["D"][i] == v_m_to_d:
-                tb["D"][i] = "M"
-            elif m["D"][i] == v_i_to_d:
-                tb["D"][i] = "I"
-            else:
-                tb["D"][i] = "D"
-
-        print(f'tb at time {i} is {tb}')
-        print(f'm at time {i} is {m}\n')
-
-
-    # handle the case where the query sequence is longer than max_length, 
-    # meaning that insertions occurred before the end
-    if n > max_length:
-        for i in range(max_length + 1, n + 1):
-            x_i = amino_to_index[query[i - 1]]
-            print(f'QUERY IS LONGER THAN MAX LENGTH curr time step is t = {i}')
-            # print(f'm["I"] shape is {len(m["I"])}')
-            if (i == max_length + 1):
-
-                curr_match_index = 3*max_length - 1
-                curr_ins_index = 3*max_length + 1
-                curr_del_index = 3*max_length
-            
-                prev_match_index = 3*(max_length-1) - 1
-                prev_ins_index = 3*(max_length-1) + 1
-                prev_del_index = 3*(max_length-1)
-
-
-                curr_ins_emiss = i_emiss_probs[max_length][x_i]
-
-                v_m_to_i = m["M"][i-1] + trans_probs[curr_match_index][curr_ins_index]
-                print(f'total m{i-1} to i{i} : { m["M"][i-1]} + {trans_probs[curr_match_index][curr_ins_index]}')
-
-                v_i_to_i = m["I"][i-1] + trans_probs[curr_ins_index][curr_ins_index]
-                print(f'total i{i-1} to i{i} : { m["I"][i-1]} + {trans_probs[curr_ins_index][curr_ins_index]}')
-
-                v_d_to_i = m["D"][i-1] + trans_probs[curr_del_index][curr_ins_index]
-                print(f'total d{i-1} to i{i} : { m["D"][i-1]} + {trans_probs[curr_del_index][curr_ins_index]}')
-
-                
-
-                m["I"][i] = curr_ins_emiss + max(v_m_to_i, v_i_to_i, v_d_to_i)
-                if m["I"][i] == v_m_to_i:
-                    tb["I"][i] = "M"
-                elif m["I"][i] == v_i_to_i:
-                    tb["I"][i] = "I"
-                else:
-                    tb["I"][i] = "D"
-
-            
-            else:
-                # no more match states so must mean that it self-loop inserts
-                curr_ins_index = (max_length)*3 + 1
-     
-                
-                print(f'i_emiss shape is {i_emiss_probs.shape}, trans shape {trans_probs.shape}')
-                print(f'max_length = {max_length}, x_i = {x_i}, curr = {curr_ins_index}')
-                print(f' m["I"][{i}] = {i_emiss_probs[max_length][x_i]} + {trans_probs[curr_ins_index][curr_ins_index]}')
-                m["I"][i] = i_emiss_probs[max_length][x_i] + trans_probs[curr_ins_index][curr_ins_index]
-        
-                tb["I"][i] = "I"
-
-                print(f'tb at time {i} is {tb}')
+           
 
     print(f'the viterbi matrix is the following: {m}')
     
