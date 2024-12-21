@@ -30,6 +30,29 @@ def read_fasta(filename):
             else: s += l.strip()
         output.append(s)
         return output
+    
+amino_acids = {
+    "A": 0,
+    "R": 1,
+    "N": 2,
+    "D": 3,
+    "C": 4,
+    "Q": 5,
+    "E": 6,
+    "G": 7,
+    "H": 8,
+    "I": 9,
+    "L": 10,
+    "K": 11,
+    "M": 12,
+    "F": 13,
+    "P": 14,
+    "S": 15,
+    "T": 16,
+    "W": 17,
+    "Y": 18,
+    "V": 19,
+}
 
 def get_transition_probabilities(sequences, insertions, deletions, max_length, sigma):
     num = (max_length * 3) + 3
@@ -55,7 +78,7 @@ def get_transition_probabilities(sequences, insertions, deletions, max_length, s
     for seq in sequences:
         prev_state = None
         state_num = 0
-        print("new")
+        # print("new")
         for i in range(len(seq)):
             # find current state
             cur_state = None
@@ -70,7 +93,7 @@ def get_transition_probabilities(sequences, insertions, deletions, max_length, s
                 cur_state = "M"
                 state_num += 1
 
-            print("state", cur_state)
+            # print("state", cur_state)
             # determine transition
             if prev_state is None: # first
                 if cur_state == "I":
@@ -125,29 +148,6 @@ def get_transition_probabilities(sequences, insertions, deletions, max_length, s
     return table
 
 def get_emission_probabilities(sequences, insertions, deletions, max_length):
-    amino_acids = {
-        "A": 0,
-        "R": 1,
-        "N": 2,
-        "D": 3,
-        "C": 4,
-        "Q": 5,
-        "E": 6,
-        "G": 7,
-        "H": 8,
-        "I": 9,
-        "L": 10,
-        "K": 11,
-        "M": 12,
-        "F": 13,
-        "P": 14,
-        "S": 15,
-        "T": 16,
-        "W": 17,
-        "Y": 18,
-        "V": 19,
-    }
-    
     m_emissions = np.full((max_length+1,20), 0.1)
     m_emissions[0] = 0
     i_emissions = np.full((max_length+1,20), 0.1)
@@ -228,30 +228,53 @@ def build_profile(fasta_file, sigma):
             insertions.add(k)
         else:
             deletions.add(k)
-    print("insertion", insertions)
-    print("deletions", deletions)
+    # print("insertion", insertions)
+    # print("deletions", deletions)
 
     # determines the max number of match states (AKA how many columns in the core motif)
     max_length = len(sequences[0]) - len(insertions)
     transition_matrix = get_transition_probabilities(sequences, insertions, deletions, max_length, sigma)
 
     transition_probs = normalize_matrix(transition_matrix)
-    for row in transition_probs:
-        for i in range(len(row)):
-            row[i] = round(row[i], 3)
-        print(row)
+    # for row in transition_probs:
+    #     for i in range(len(row)):
+    #         row[i] = round(row[i], 3)
+    #     print(row)
 
     m_emissions, i_emissions = get_emission_probabilities(sequences, insertions, deletions, max_length)
     row_sums = m_emissions.sum(axis=1, keepdims=True)
     m_emission_probs = m_emissions / row_sums
-    for i, row in enumerate(m_emission_probs):
-        print(i, row)
+    # for i, row in enumerate(m_emission_probs):
+    #     print(i, row)
 
     row_sums = i_emissions.sum(axis=1, keepdims=True)
     i_emission_probs = i_emissions / row_sums
     print("space")
-    for i, row in enumerate(i_emission_probs):
-        print(i, row)
+    # for i, row in enumerate(i_emission_probs):
+    #     print(i, row)
+
+    divide = np.zeros(20)
+    total = 0
+    for seq in sequences:
+        for i in range(len(seq)):
+            if seq[i] != ".":
+                amino = seq[i]
+                index = amino_acids[amino]
+                divide[index] += 1
+                total += 1
+    divide /= total
+
+    print("before", m_emission_probs)
+    for i in range(len(m_emissions)):
+        m_emission_probs[i] /= divide
+        i_emission_probs[i] /= divide
+    print("after", m_emission_probs)
+    for i in range(len(m_emission_probs)):
+        for j in range(20):
+            if m_emission_probs[i][j] > 1:
+                m_emission_probs[i][j] = 1
+            if i_emission_probs[i][j] > 1:
+                i_emission_probs[i][j] = 1
 
     '''
     NOTES:
