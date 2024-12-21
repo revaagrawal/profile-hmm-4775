@@ -1,0 +1,63 @@
+#                                                                                     --- full sequence ---- --- best 1 domain ---- --- domain number estimation ----
+# target name                              accession  query name           accession    E-value  score  bias   E-value  score  bias   exp reg clu  ov env dom rep inc description of target
+#                      ------------------- ---------- -------------------- ---------- --------- ------ ----- --------- ------ -----   --- --- --- --- --- --- --- --- ---------------------
+A2ASS6|reviewed|Titin|taxID:10090|NF	-	msa_train	-	0	2066.1	0.0	1.1e-09	33.7	0.0	154.2	160	0	0	160	160	0	92	-
+G4SLH0|reviewed|Titin	-	msa_train	-	4.5e-162	512.9	22.8	4e-09	32.0	0.7	46.5	48	1	1	49	49	0	19	homolog|taxID:6239|NF
+Q62230|reviewed|Sialoadhesin|taxID:10090|P	-	msa_train	-	2.6e-79	252.6	0.1	5.6e-06	22.1	0.1	17.3	17	0	0	17	17	0	13	-
+Q15746|reviewed|Myosin	-	msa_train	-	1.9e-75	240.5	6.3	2.1e-11	39.1	0.3	9.6	9	0	0	9	9	0	9	light/chain/kinase,/smooth/muscle|taxID:9606|NF
+Q06561|reviewed|Basement	-	msa_train	-	1.3e-68	219.0	26.8	3e-06	22.9	0.0	19.0	19	0	0	19	19	0	12	membrane/proteoglycan|taxID:6239|P
+Q9ERC8|reviewed|Cell	-	msa_train	-	4.7e-64	204.7	0.4	4.8e-08	28.6	0.1	11.0	10	0	0	10	10	0	8	adhesion/molecule/DSCAM|taxID:10090|NF
+P20241|reviewed|Neuroglian|taxID:7227|P	-	msa_train	-	5.9e-58	185.5	5.2	1.6e-13	45.8	0.0	8.0	7	0	0	7	7	0	5	-
+P13595|reviewed|Neural	-	msa_train	-	4.9e-45	144.9	0.1	8.9e-11	37.2	0.1	5.5	5	0	0	5	5	0	5	cell/adhesion/molecule/1|taxID:10090|NF
+Q8AXZ4|reviewed|Contactin-1a|taxID:7955|NF	-	msa_train	-	2.6e-44	142.6	0.0	5.4e-08	28.4	0.0	6.6	6	0	0	6	6	0	6	-
+Q8AXZ4|reviewed|Contactin-1a|taxID:7955|P	-	msa_train	-	2.6e-44	142.6	0.0	5.4e-08	28.4	0.0	6.6	6	0	0	6	6	0	6	-
+Q28106|reviewed|Contactin-1|taxID:9913|P	-	msa_train	-	3.2e-44	142.3	0.0	1.1e-08	30.6	0.0	6.8	6	0	0	6	6	0	6	-
+P19320|reviewed|Vascular	-	msa_train	-	5.4e-44	141.6	1.5	5.6e-12	40.9	0.0	5.9	6	0	0	6	6	0	5	cell/adhesion/protein/1|taxID:9606|P
+P97528|reviewed|Contactin-6|taxID:10116|NF	-	msa_train	-	2.4e-43	139.6	3.8	1.2e-06	24.1	0.1	7.2	8	0	0	8	8	0	6	-
+P12960|reviewed|Contactin-1|taxID:10090|P	-	msa_train	-	3e-43	139.3	0.0	1.3e-08	30.3	0.0	6.9	6	0	0	6	6	0	6	-
+Q12860|reviewed|Contactin-1|taxID:9606|P	-	msa_train	-	6.2e-43	138.3	0.0	1.1e-08	30.6	0.0	6.9	6	0	0	6	6	0	6	-
+Q63198|reviewed|Contactin-1|taxID:10116|P	-	msa_train	-	1.5e-42	137.0	0.0	1.5e-08	30.2	0.0	6.8	6	0	0	6	6	0	6	-
+P29534|reviewed|Vascular	-	msa_train	-	4.9e-42	135.5	0.4	2.1e-09	32.9	0.0	5.5	5	0	0	5	5	0	5	cell/adhesion/protein/1|taxID:10116|P
+O15394|reviewed|Neural	-	msa_train	-	1e-41	134.5	0.0	3.2e-08	29.1	0.0	5.4	5	0	0	5	5	0	5	cell/adhesion/molecule/2|taxID:9606|NF
+O89026|reviewed|Roundabout	-	msa_train	-	1.6e-41	133.8	0.0	3.6e-08	29.0	0.0	6.6	6	0	0	6	6	0	5	homolog/1|taxID:10090|NF
+P14781|reviewed|Contactin-1|taxID:9031|NF	-	msa_train	-	1.8e-41	133.6	0.0	1e-08	30.7	0.0	6.8	6	0	0	6	6	0	5	-
+O55005|reviewed|Roundabout	-	msa_train	-	3.3e-41	132.8	0.1	7.1e-08	28.0	0.0	6.6	6	0	0	6	6	0	5	homolog/1|taxID:10116|NF
+P36335|reviewed|Neural	-	msa_train	-	1.4e-40	130.9	0.0	5.5e-10	34.7	0.1	5.6	5	0	0	5	5	0	5	cell/adhesion/molecule/1-B|taxID:8355|NF
+Q28260|reviewed|Vascular	-	msa_train	-	3e-40	129.8	0.0	2.7e-11	38.8	0.0	6.8	7	0	0	7	7	0	5	cell/adhesion/protein/1|taxID:9615|P
+Q7ZW34|reviewed|Contactin-5|taxID:7955|NF	-	msa_train	-	3.4e-40	129.7	0.0	3.1e-07	26.0	0.0	7.0	7	0	0	7	7	0	6	-
+Q92823|reviewed|Neuronal	-	msa_train	-	4e-40	129.4	0.0	9.8e-08	27.6	0.0	7.6	8	0	0	8	8	0	6	cell/adhesion/molecule|taxID:9606|NF
+P17948|reviewed|Vascular	-	msa_train	-	1.4e-39	127.8	10.0	2.8e-10	35.6	0.0	8.3	7	1	0	7	7	0	6	endothelial/growth/factor/receptor/1|taxID:9606|P
+O42414|reviewed|Neurofascin|taxID:9031|NF	-	msa_train	-	1.3e-38	124.7	0.0	3.3e-08	29.1	0.0	7.6	7	0	0	7	7	0	6	-
+P97685|reviewed|Neurofascin|taxID:10116|NF	-	msa_train	-	5.2e-38	122.8	1.6	5.2e-07	25.3	0.0	7.9	8	0	0	8	8	0	6	-
+P97685|reviewed|Neurofascin|taxID:10116|P	-	msa_train	-	5.2e-38	122.8	1.6	5.2e-07	25.3	0.0	7.9	8	0	0	8	8	0	6	-
+Q810U3|reviewed|Neurofascin|taxID:10090|P	-	msa_train	-	5.7e-38	122.7	1.8	4.5e-07	25.5	0.0	7.8	8	0	0	8	8	0	6	-
+Q9U3P2|reviewed|Synaptogenesis	-	msa_train	-	6.1e-38	122.6	6.1	6e-07	25.1	0.0	9.8	9	0	0	9	9	0	6	protein/syg-2|taxID:6239|NF
+O94856|reviewed|Neurofascin|taxID:9606|P	-	msa_train	-	1.1e-37	121.7	0.0	5.8e-07	25.2	0.0	7.5	7	0	0	7	7	0	6	-
+O00533|reviewed|Neural	-	msa_train	-	3.2e-37	120.3	1.3	1.7e-07	26.8	0.0	7.1	7	0	0	7	7	0	6	cell/adhesion/molecule/L1-like/protein|taxID:9606|P
+P35969|reviewed|Vascular	-	msa_train	-	1.1e-36	118.7	13.8	1.2e-09	33.7	0.0	8.3	7	1	0	7	7	0	4	endothelial/growth/factor/receptor/1|taxID:10090|P
+Q8QHL3|reviewed|Vascular	-	msa_train	-	2e-36	117.8	3.7	2.6e-07	26.3	0.0	8.2	8	1	0	8	8	0	6	endothelial/growth/factor/receptor/1|taxID:9031|P
+P43629|reviewed|Killer	-	msa_train	-	2.3e-36	117.6	1.4	6.3e-15	50.2	0.5	3.4	3	0	0	3	3	0	3	cell/immunoglobulin-like/receptor/3DL1|taxID:9606|P
+Q9UPX0|reviewed|Protein	-	msa_train	-	6.7e-35	113.0	0.1	4.9e-09	31.7	0.0	5.6	5	0	0	5	5	0	5	turtle/homolog/B|taxID:9606|NF
+Q4KMG0|reviewed|Cell	-	msa_train	-	9.4e-35	112.5	0.2	2e-07	26.6	0.4	6.6	6	0	0	6	6	0	4	adhesion/molecule-related/down-regulated/by/oncogenes|taxID:9606|NF
+Q14943|reviewed|Killer	-	msa_train	-	2e-34	111.5	3.1	6e-14	47.1	0.5	3.3	3	0	0	3	3	0	3	cell/immunoglobulin-like/receptor/3DS1|taxID:9606|P
+D3ZB51|reviewed|Protein	-	msa_train	-	2.8e-34	111.0	0.0	4.2e-09	31.9	0.0	5.7	5	0	0	5	5	0	5	turtle/homolog/B|taxID:10116|NF
+Q5MD89|reviewed|Vascular	-	msa_train	-	4.7e-34	110.3	12.7	1.1e-10	36.9	0.2	7.7	7	0	0	7	7	0	4	endothelial/growth/factor/receptor/3|taxID:7955|P
+P32004|reviewed|Neural	-	msa_train	-	6.8e-34	109.8	2.7	3e-06	22.9	0.0	7.5	8	0	0	8	8	0	6	cell/adhesion/molecule/L1|taxID:9606|NF
+P35968|reviewed|Vascular	-	msa_train	-	4e-33	107.4	6.5	3.7e-10	35.2	0.0	7.5	7	0	0	7	7	0	4	endothelial/growth/factor/receptor/2|taxID:9606|P
+Q925P2|reviewed|Carcinoembryonic	-	msa_train	-	5e-33	107.1	6.0	2.4e-11	39.0	0.0	4.4	4	0	0	4	4	0	4	antigen-related/cell/adhesion/molecule/2|taxID:10090|P
+P70211|reviewed|Netrin	-	msa_train	-	5.2e-33	107.1	0.0	4.2e-10	35.0	0.0	5.8	5	0	0	5	5	0	4	receptor/DCC|taxID:10090|NF
+P13688|reviewed|Carcinoembryonic	-	msa_train	-	8.9e-32	103.2	11.0	9.9e-16	52.7	0.4	4.5	4	0	0	4	4	0	4	antigen-related/cell/adhesion/molecule/1|taxID:9606|P
+P43630|reviewed|Killer	-	msa_train	-	1.8e-31	102.2	0.7	4.1e-11	38.2	0.1	3.4	3	0	0	3	3	0	3	cell/immunoglobulin-like/receptor/3DL2|taxID:9606|P
+Q8AXB3|reviewed|Vascular	-	msa_train	-	3.1e-31	101.5	9.9	1.5e-08	30.2	0.1	7.5	6	1	0	6	6	0	5	endothelial/growth/factor/receptor/kdr-like|taxID:7955|P
+P11834|reviewed|Opioid-binding	-	msa_train	-	3.3e-31	101.4	0.1	7.2e-15	50.0	0.0	3.3	3	0	0	3	3	0	3	protein/cell/adhesion/molecule|taxID:9913|P
+P34082|reviewed|Fasciclin-2|taxID:7227|NF	-	msa_train	-	6.6e-31	100.4	0.1	1.5e-07	27.0	0.0	5.7	5	0	0	5	5	0	4	-
+#
+# Program:         hmmsearch
+# Version:         3.4 (Aug 2023)
+# Pipeline mode:   SEARCH
+# Query file:      models/simple_model.hmm
+# Target file:     complete_sequences.fasta
+# Option settings: hmmsearch -o simple_test/score/100_results.txt --tblout simple_test/score/100_results.tbl -T 100 --domT 100 --seed 42 models/simple_model.hmm complete_sequences.fasta 
+# Current dir:     /Users/revaagrawal/Documents/Cornell_Undergrad/CS4775/profile-hmm-4775/hmmer
+# Date:            Sat Dec 21 02:12:09 2024
+# [ok]

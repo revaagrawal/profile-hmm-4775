@@ -1,0 +1,361 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.4 (Aug 2023); http://hmmer.org/
+# Copyright (C) 2023 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  models/blosum_model.hmm
+# target sequence database:        complete_sequences.fasta
+# output directed to file:         blosum_test/score/100_results.txt
+# per-seq hits tabular output:     blosum_test/score/100_results.tbl
+# sequence reporting threshold:    score >= 100
+# domain reporting threshold:      score >= 100
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       msa_train  [M=81]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence                                   Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------                                   -----------
+          0 2823.0 310.7    1.7e-13   45.5   0.2  160.7  0  A2ASS6|reviewed|Titin|taxID:10090|NF        
+   2.4e-209  673.1  95.2    5.8e-11   37.4   0.1   48.7  0  G4SLH0|reviewed|Titin                       homolog|taxID:6239|NF
+    3.2e-98  317.0   9.6      4e-09   31.5   0.0   18.3  0  Q06561|reviewed|Basement                    membrane proteoglycan|taxID:6239
+    2.9e-94  304.4  26.2    7.5e-09   30.6   0.0   19.0  0  Q62230|reviewed|Sialoadhesin|taxID:10090|P  
+    3.4e-90  291.3  16.2    2.3e-13   45.1   0.2    9.5  0  Q15746|reviewed|Myosin                      light chain kinase, smooth muscl
+    9.8e-81  261.0   3.2      2e-10   35.7   0.0   10.7  0  Q9ERC8|reviewed|Cell                        adhesion molecule DSCAM|taxID:10
+    1.2e-70  228.7  10.5    5.9e-19   63.0   0.0    7.5  0  P20241|reviewed|Neuroglian|taxID:7227|P     
+    8.8e-57  184.2   0.1    6.8e-12   40.4   0.1    7.1  0  Q8AXZ4|reviewed|Contactin-1a|taxID:7955|NF  
+    8.8e-57  184.2   0.1    6.8e-12   40.4   0.1    7.1  0  Q8AXZ4|reviewed|Contactin-1a|taxID:7955|P   
+    4.6e-56  181.9   7.5    3.5e-13   44.5   0.3    5.5  0  P13595|reviewed|Neural                      cell adhesion molecule 1|taxID:1
+    9.8e-56  180.9   3.5    4.6e-12   41.0   0.0    5.4  0  O15394|reviewed|Neural                      cell adhesion molecule 2|taxID:9
+    3.8e-54  175.8   4.6    1.6e-09   32.8   0.0    7.0  0  P97528|reviewed|Contactin-6|taxID:10116|NF  
+      7e-54  174.9   0.1    4.6e-12   40.9   0.0    7.3  0  Q28106|reviewed|Contactin-1|taxID:9913|P    
+    8.9e-54  174.6   0.1    5.8e-12   40.6   0.0    5.9  0  O89026|reviewed|Roundabout                  homolog 1|taxID:10090|NF
+    2.6e-53  173.1  14.0    1.3e-16   55.5   0.0    6.7  0  P19320|reviewed|Vascular                    cell adhesion protein 1|taxID:96
+    4.5e-53  172.4   0.2    3.1e-11   38.3   0.0    5.9  0  O55005|reviewed|Roundabout                  homolog 1|taxID:10116|NF
+    7.8e-53  171.6   2.1    6.6e-12   40.4   0.0    7.2  0  Q7ZW34|reviewed|Contactin-5|taxID:7955|NF   
+      2e-52  170.3   0.0    1.2e-11   39.6   0.1    7.7  0  Q92823|reviewed|Neuronal                    cell adhesion molecule|taxID:960
+      8e-52  168.4   9.1    9.6e-16   52.7   0.0    7.4  0  Q28260|reviewed|Vascular                    cell adhesion protein 1|taxID:96
+    9.4e-52  168.1  10.0      8e-14   46.6   0.0    5.7  0  P29534|reviewed|Vascular                    cell adhesion protein 1|taxID:10
+    1.8e-51  167.2   0.3    7.2e-12   40.3   0.1    7.3  0  P14781|reviewed|Contactin-1|taxID:9031|NF   
+    5.6e-51  165.6   0.1    4.6e-12   40.9   0.0    7.5  0  Q12860|reviewed|Contactin-1|taxID:9606|P    
+    1.4e-50  164.4   2.7    1.6e-11   39.2   0.1    5.6  0  P36335|reviewed|Neural                      cell adhesion molecule 1-B|taxID
+    1.7e-50  164.1   0.1      1e-11   39.8   0.0    7.5  0  P12960|reviewed|Contactin-1|taxID:10090|P   
+    3.9e-50  162.9   0.2    5.5e-12   40.7   0.0    7.5  0  Q63198|reviewed|Contactin-1|taxID:10116|P   
+    1.6e-48  157.8   0.0    4.7e-12   40.9   0.0    7.0  0  O42414|reviewed|Neurofascin|taxID:9031|NF   
+    1.6e-48  157.7   0.5      1e-09   33.4   0.0    7.3  0  P97685|reviewed|Neurofascin|taxID:10116|NF  
+    1.6e-48  157.7   0.5      1e-09   33.4   0.0    7.3  0  P97685|reviewed|Neurofascin|taxID:10116|P   
+    2.1e-48  157.4   0.1    5.4e-10   34.3   0.0    7.1  0  Q810U3|reviewed|Neurofascin|taxID:10090|P   
+    1.7e-47  154.5   0.0    1.1e-09   33.3   0.0    6.9  0  O94856|reviewed|Neurofascin|taxID:9606|P    
+    2.6e-47  153.9  17.3    6.8e-14   46.8   0.2    8.9  0  P17948|reviewed|Vascular                    endothelial growth factor recept
+      1e-46  152.0  17.1    1.6e-09   32.8   0.0    9.1  0  Q9U3P2|reviewed|Synaptogenesis              protein syg-2|taxID:6239|NF
+    4.8e-45  146.6   0.0    6.6e-18   59.7   0.0    3.2  0  P43629|reviewed|Killer                      cell immunoglobulin-like recepto
+    9.9e-45  145.6   0.3    2.5e-09   32.2   0.0    7.3  0  P32004|reviewed|Neural                      cell adhesion molecule L1|taxID:
+    1.2e-44  145.3   2.5    2.8e-11   38.4   0.0    7.4  0  O00533|reviewed|Neural                      cell adhesion molecule L1-like p
+    7.5e-44  142.8   9.8    1.2e-10   36.4   0.0    8.4  0  Q8QHL3|reviewed|Vascular                    endothelial growth factor recept
+    2.1e-43  141.4   0.6    2.4e-10   35.4   0.0    5.9  0  Q4KMG0|reviewed|Cell                        adhesion molecule-related/down-r
+    2.4e-43  141.2  19.0    1.7e-13   45.5   0.0    8.7  0  P35969|reviewed|Vascular                    endothelial growth factor recept
+    5.9e-43  139.9   0.1    3.3e-08   28.6   0.0    9.0  0  P56741|reviewed|Myosin-binding              protein C, cardiac-type|taxID:10
+      2e-42  138.2   0.0    8.4e-17   56.1   0.0    3.1  0  Q14943|reviewed|Killer                      cell immunoglobulin-like recepto
+    4.9e-42  137.0   0.0    7.3e-14   46.7   0.0    5.1  0  P70211|reviewed|Netrin                      receptor DCC|taxID:10090|NF
+    5.9e-41  133.5  12.2    2.1e-15   51.6   0.1    4.6  0  Q925P2|reviewed|Carcinoembryonic            antigen-related cell adhesion mo
+    2.6e-40  131.4   0.0    1.3e-12   42.7   0.1    6.0  0  Q9UPX0|reviewed|Protein                     turtle homolog B|taxID:9606|NF
+    3.6e-40  131.0   2.5    4.9e-08   28.0   0.1    9.6  0  Q9QZS7|reviewed|Nephrin|taxID:10090|NF      
+      9e-40  129.7   0.1    1.6e-08   29.6   0.0    9.0  0  Q14896|reviewed|Myosin-binding              protein C, cardiac-type|taxID:96
+      1e-39  129.5   4.2    4.2e-16   53.9   0.0    6.7  0  Q09165|reviewed|Mesocentin|taxID:6239|NF    
+      1e-39  129.5   4.2    4.2e-16   53.9   0.0    6.7  0  Q09165|reviewed|Mesocentin|taxID:6239|P     
+    1.2e-39  129.4   0.0    5.6e-13   43.9   0.1    6.0  0  D3ZB51|reviewed|Protein                     turtle homolog B|taxID:10116|NF
+    1.5e-39  129.0  13.6    1.8e-20   67.9   0.9    4.7  0  P13688|reviewed|Carcinoembryonic            antigen-related cell adhesion mo
+    7.5e-39  126.8   3.4      7e-20   66.0   0.0    3.7  0  P11834|reviewed|Opioid-binding              protein/cell adhesion molecule|t
+    1.1e-38  126.3  12.2    4.4e-13   44.2   0.5    7.5  0  Q5MD89|reviewed|Vascular                    endothelial growth factor recept
+    1.8e-38  125.5   0.0    7.5e-11   37.1   0.0    5.0  0  Q2EY14|reviewed|Protogenin                  A|taxID:7955|NF
+    2.1e-38  125.3   0.0    4.4e-14   47.4   0.0    3.2  0  P43630|reviewed|Killer                      cell immunoglobulin-like recepto
+    3.2e-38  124.8  13.3    1.4e-13   45.8   0.1    7.7  0  P35968|reviewed|Vascular                    endothelial growth factor recept
+    1.2e-37  122.9   0.3    7.4e-10   33.9   0.0    5.5  0  P34082|reviewed|Fasciclin-2|taxID:7227|NF   
+    1.9e-37  122.3   4.0    8.2e-21   69.0   0.1    3.7  0  P32736|reviewed|Opioid-binding              protein/cell adhesion molecule|t
+    2.3e-37  122.0   0.0    5.1e-12   40.8   0.0    4.7  0  Q90413|reviewed|Fibroblast                  growth factor receptor 4|taxID:7
+    3.2e-37  121.5   6.1    3.4e-19   63.8   0.0    4.2  0  Q62718|reviewed|Neurotrimin|taxID:10116|P   
+    3.3e-37  121.5  16.5      5e-12   40.8   0.1    7.9  0  Q8AXB3|reviewed|Vascular                    endothelial growth factor recept
+    4.6e-37  121.1   6.2    4.5e-19   63.4   0.0    4.2  0  Q99PJ0|reviewed|Neurotrimin|taxID:10090|P   
+    6.2e-37  120.6   3.4    4.6e-13   44.1   0.1    6.6  0  B8VIW9|reviewed|Fibronectin                 type III domain-containing prote
+    9.1e-37  120.1   0.0      4e-13   44.3   0.0    7.4  0  Q5XKE0|reviewed|Myosin-binding              protein C, fast-type|taxID:10090
+    9.7e-37  120.0   5.1      1e-18   62.2   0.0    4.2  0  Q9P121|reviewed|Neurotrimin|taxID:9606|P    
+    1.4e-36  119.5   0.3    5.4e-14   47.1   0.0    3.4  0  P21804|reviewed|Fibroblast                  growth factor receptor 1|taxID:9
+    3.2e-36  118.3   4.4      5e-18   60.1   0.0    4.3  0  Q90773|reviewed|Protein                     CEPU-1|taxID:9031|P
+      6e-36  117.5   0.1    4.3e-09   31.4   0.0    4.7  0  Q2VWP7|reviewed|Protogenin|taxID:9606|NF    
+    3.7e-35  114.9   0.3    7.4e-12   40.3   0.0    3.5  0  P16092|reviewed|Fibroblast                  growth factor receptor 1|taxID:1
+      4e-35  114.8   0.0    5.6e-16   53.5   0.0    3.2  0  Q8N743|reviewed|Killer                      cell immunoglobulin-like recepto
+    5.2e-35  114.5   0.2    5.2e-12   40.8   0.0    3.5  0  Q04589|reviewed|Fibroblast                  growth factor receptor 1|taxID:1
+    8.2e-35  113.8   2.2    1.8e-12   42.3   0.1    3.6  0  P22182|reviewed|Fibroblast                  growth factor receptor 1|taxID:8
+    8.8e-35  113.7   0.0    2.8e-10   35.2   0.0    5.9  0  Q9P2J2|reviewed|Protein                     turtle homolog A|taxID:9606|NF
+    1.8e-34  112.8   0.3    3.4e-11   38.2   0.0    3.5  0  P11362|reviewed|Fibroblast                  growth factor receptor 1|taxID:9
+      6e-34  111.1   0.1    1.3e-10   36.3   0.1    5.9  0  Q05BQ1|reviewed|Protein                     turtle homolog A|taxID:10090|NF
+    1.1e-33  110.2  16.6    1.1e-10   36.5   0.1    7.2  0  O08775|reviewed|Vascular                    endothelial growth factor recept
+    1.4e-33  109.9   0.0    2.4e-10   35.4   0.1    6.0  0  P0C5H6|reviewed|Protein                     turtle homolog A|taxID:10116|NF
+    5.9e-32  104.7   6.2    1.4e-11   39.4   0.0    6.7  0  Q96P31|reviewed|Fc                          receptor-like protein 3|taxID:96
+    7.5e-32  104.4   0.0    1.6e-17   58.4   0.0    2.3  0  Q99706|reviewed|Killer                      cell immunoglobulin-like recepto
+    3.5e-31  102.2   0.7    1.8e-11   39.0   0.0    3.6  0  P18460|reviewed|Fibroblast                  growth factor receptor 3|taxID:9
+    3.9e-31  102.1   0.1    7.1e-10   33.9   0.0    4.2  0  Q8MJZ2|reviewed|Leukocyte                   immunoglobulin-like receptor sub
+    1.3e-30  100.4  12.5    3.2e-12   41.4   0.2    5.3  0  C0HJX2|reviewed|Leukocyte                   immunoglobulin-like receptor sub
+    1.3e-30  100.4  12.5    3.2e-12   41.4   0.2    5.3  0  C0HJX3|reviewed|Leukocyte                   immunoglobulin-like receptor sub
+
+
+Domain annotation for each sequence (and alignments):
+>> A2ASS6|reviewed|Titin|taxID:10090|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> G4SLH0|reviewed|Titin  homolog|taxID:6239|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q06561|reviewed|Basement  membrane proteoglycan|taxID:6239|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q62230|reviewed|Sialoadhesin|taxID:10090|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q15746|reviewed|Myosin  light chain kinase, smooth muscle|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9ERC8|reviewed|Cell  adhesion molecule DSCAM|taxID:10090|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P20241|reviewed|Neuroglian|taxID:7227|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8AXZ4|reviewed|Contactin-1a|taxID:7955|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8AXZ4|reviewed|Contactin-1a|taxID:7955|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P13595|reviewed|Neural  cell adhesion molecule 1|taxID:10090|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O15394|reviewed|Neural  cell adhesion molecule 2|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P97528|reviewed|Contactin-6|taxID:10116|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q28106|reviewed|Contactin-1|taxID:9913|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O89026|reviewed|Roundabout  homolog 1|taxID:10090|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P19320|reviewed|Vascular  cell adhesion protein 1|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O55005|reviewed|Roundabout  homolog 1|taxID:10116|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q7ZW34|reviewed|Contactin-5|taxID:7955|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q92823|reviewed|Neuronal  cell adhesion molecule|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q28260|reviewed|Vascular  cell adhesion protein 1|taxID:9615|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P29534|reviewed|Vascular  cell adhesion protein 1|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P14781|reviewed|Contactin-1|taxID:9031|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q12860|reviewed|Contactin-1|taxID:9606|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P36335|reviewed|Neural  cell adhesion molecule 1-B|taxID:8355|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P12960|reviewed|Contactin-1|taxID:10090|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q63198|reviewed|Contactin-1|taxID:10116|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O42414|reviewed|Neurofascin|taxID:9031|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P97685|reviewed|Neurofascin|taxID:10116|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P97685|reviewed|Neurofascin|taxID:10116|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q810U3|reviewed|Neurofascin|taxID:10090|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O94856|reviewed|Neurofascin|taxID:9606|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P17948|reviewed|Vascular  endothelial growth factor receptor 1|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9U3P2|reviewed|Synaptogenesis  protein syg-2|taxID:6239|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P43629|reviewed|Killer  cell immunoglobulin-like receptor 3DL1|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P32004|reviewed|Neural  cell adhesion molecule L1|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O00533|reviewed|Neural  cell adhesion molecule L1-like protein|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8QHL3|reviewed|Vascular  endothelial growth factor receptor 1|taxID:9031|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q4KMG0|reviewed|Cell  adhesion molecule-related/down-regulated by oncogenes|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P35969|reviewed|Vascular  endothelial growth factor receptor 1|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P56741|reviewed|Myosin-binding  protein C, cardiac-type|taxID:10116|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q14943|reviewed|Killer  cell immunoglobulin-like receptor 3DS1|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P70211|reviewed|Netrin  receptor DCC|taxID:10090|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q925P2|reviewed|Carcinoembryonic  antigen-related cell adhesion molecule 2|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9UPX0|reviewed|Protein  turtle homolog B|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9QZS7|reviewed|Nephrin|taxID:10090|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q14896|reviewed|Myosin-binding  protein C, cardiac-type|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q09165|reviewed|Mesocentin|taxID:6239|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q09165|reviewed|Mesocentin|taxID:6239|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> D3ZB51|reviewed|Protein  turtle homolog B|taxID:10116|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P13688|reviewed|Carcinoembryonic  antigen-related cell adhesion molecule 1|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P11834|reviewed|Opioid-binding  protein/cell adhesion molecule|taxID:9913|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q5MD89|reviewed|Vascular  endothelial growth factor receptor 3|taxID:7955|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q2EY14|reviewed|Protogenin  A|taxID:7955|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P43630|reviewed|Killer  cell immunoglobulin-like receptor 3DL2|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P35968|reviewed|Vascular  endothelial growth factor receptor 2|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P34082|reviewed|Fasciclin-2|taxID:7227|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P32736|reviewed|Opioid-binding  protein/cell adhesion molecule|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q90413|reviewed|Fibroblast  growth factor receptor 4|taxID:7955|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q62718|reviewed|Neurotrimin|taxID:10116|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8AXB3|reviewed|Vascular  endothelial growth factor receptor kdr-like|taxID:7955|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q99PJ0|reviewed|Neurotrimin|taxID:10090|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> B8VIW9|reviewed|Fibronectin  type III domain-containing protein|taxID:45264|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q5XKE0|reviewed|Myosin-binding  protein C, fast-type|taxID:10090|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9P121|reviewed|Neurotrimin|taxID:9606|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P21804|reviewed|Fibroblast  growth factor receptor 1|taxID:9031|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q90773|reviewed|Protein  CEPU-1|taxID:9031|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q2VWP7|reviewed|Protogenin|taxID:9606|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P16092|reviewed|Fibroblast  growth factor receptor 1|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8N743|reviewed|Killer  cell immunoglobulin-like receptor 3DL3|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q04589|reviewed|Fibroblast  growth factor receptor 1|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P22182|reviewed|Fibroblast  growth factor receptor 1|taxID:8355|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9P2J2|reviewed|Protein  turtle homolog A|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P11362|reviewed|Fibroblast  growth factor receptor 1|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q05BQ1|reviewed|Protein  turtle homolog A|taxID:10090|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O08775|reviewed|Vascular  endothelial growth factor receptor 2|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P0C5H6|reviewed|Protein  turtle homolog A|taxID:10116|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q96P31|reviewed|Fc  receptor-like protein 3|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q99706|reviewed|Killer  cell immunoglobulin-like receptor 2DL4|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P18460|reviewed|Fibroblast  growth factor receptor 3|taxID:9031|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8MJZ2|reviewed|Leukocyte  immunoglobulin-like receptor subfamily A member 6|taxID:9598|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> C0HJX2|reviewed|Leukocyte  immunoglobulin-like receptor subfamily B member 3A|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> C0HJX3|reviewed|Leukocyte  immunoglobulin-like receptor subfamily B member 3B|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (81 nodes)
+Target sequences:                        442  (430602 residues searched)
+Passed MSV filter:                       279  (0.631222); expected 8.8 (0.02)
+Passed bias filter:                      278  (0.628959); expected 8.8 (0.02)
+Passed Vit filter:                       275  (0.622172); expected 0.4 (0.001)
+Passed Fwd filter:                       274  (0.61991); expected 0.0 (1e-05)
+Initial search space (Z):                442  [actual number of targets]
+Domain search space  (domZ):              81  [number of targets reported over threshold]
+# CPU time: 0.22u 0.00s 00:00:00.22 Elapsed: 00:00:00.22
+# Mc/sec: 156.78
+//
+[ok]

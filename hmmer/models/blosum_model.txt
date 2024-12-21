@@ -1,0 +1,17 @@
+# hmmbuild :: profile HMM construction from multiple sequence alignments
+# HMMER 3.4 (Aug 2023); http://hmmer.org/
+# Copyright (C) 2023 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# input alignment file:             msa_train.fasta
+# output HMM file:                  blosum_model.hmm
+# output directed to file:          blosum_model.txt
+# input alignment is asserted as:   protein
+# relative weighting scheme:        BLOSUM filter
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+# idx name                  nseq  alen  mlen eff_nseq re/pos description
+#---- -------------------- ----- ----- ----- -------- ------ -----------
+1     msa_train               34   113    81    14.41  0.700 
+
+# CPU time: 0.03u 0.00s 00:00:00.03 Elapsed: 00:00:00.03

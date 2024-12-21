@@ -1,0 +1,1285 @@
+# hmmsearch :: search profile(s) against a sequence database
+# HMMER 3.4 (Aug 2023); http://hmmer.org/
+# Copyright (C) 2023 Howard Hughes Medical Institute.
+# Freely distributed under the BSD open source license.
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+# query HMM file:                  models/default_model.hmm
+# target sequence database:        complete_sequences.fasta
+# output directed to file:         default_test/score/50_results.txt
+# per-seq hits tabular output:     default_test/score/50_results.tbl
+# sequence reporting threshold:    score >= 50
+# domain reporting threshold:      score >= 50
+# - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Query:       msa_train  [M=81]
+Scores for complete sequences (score includes all domains):
+   --- full sequence ---   --- best 1 domain ---    -#dom-
+    E-value  score  bias    E-value  score  bias    exp  N  Sequence                                           Description
+    ------- ------ -----    ------- ------ -----   ---- --  --------                                           -----------
+          0 2712.5 304.6    6.2e-13   43.7   0.2  159.9  0  A2ASS6|reviewed|Titin|taxID:10090|NF                
+   1.4e-200  645.0  89.8    1.3e-10   36.3   0.4   48.0  0  G4SLH0|reviewed|Titin                               homolog|taxID:6239|NF
+    3.7e-96  310.4  10.1      5e-09   31.2   0.0   18.3  0  Q06561|reviewed|Basement                            membrane proteoglycan|taxID:6239
+    3.7e-91  294.4  28.9    6.5e-09   30.8   0.0   19.1  0  Q62230|reviewed|Sialoadhesin|taxID:10090|P          
+    5.2e-88  284.3  16.6    4.5e-13   44.1   0.3    9.5  0  Q15746|reviewed|Myosin                              light chain kinase, smooth muscl
+    2.4e-78  253.3   3.3    2.5e-10   35.3   0.0   10.8  0  Q9ERC8|reviewed|Cell                                adhesion molecule DSCAM|taxID:10
+    8.1e-67  216.4  10.7    2.5e-17   57.8   0.0    7.4  2  P20241|reviewed|Neuroglian|taxID:7227|P             
+    6.6e-56  181.4   0.1      7e-12   40.3   0.1    7.1  0  Q8AXZ4|reviewed|Contactin-1a|taxID:7955|NF          
+    6.6e-56  181.4   0.1      7e-12   40.3   0.1    7.1  0  Q8AXZ4|reviewed|Contactin-1a|taxID:7955|P           
+    1.2e-54  177.4   7.0    8.4e-13   43.3   0.3    5.6  0  P13595|reviewed|Neural                              cell adhesion molecule 1|taxID:1
+    2.1e-54  176.6   3.0    1.8e-11   39.0   0.0    5.4  0  O15394|reviewed|Neural                              cell adhesion molecule 2|taxID:9
+      1e-52  171.2   0.1    2.2e-11   38.8   0.0    5.9  0  O89026|reviewed|Roundabout                          homolog 1|taxID:10090|NF
+    2.1e-52  170.2   0.0    5.2e-12   40.7   0.0    7.3  0  Q28106|reviewed|Contactin-1|taxID:9913|P            
+    3.9e-52  169.3   7.0    1.8e-09   32.6   0.0    7.0  0  P97528|reviewed|Contactin-6|taxID:10116|NF          
+    4.6e-52  169.1   0.2    4.7e-11   37.7   0.1    5.9  0  O55005|reviewed|Roundabout                          homolog 1|taxID:10116|NF
+    2.6e-51  166.7   1.8      1e-11   39.8   0.0    7.1  0  Q7ZW34|reviewed|Contactin-5|taxID:7955|NF           
+    2.9e-50  163.3   0.0    3.2e-11   38.2   0.1    7.9  0  Q92823|reviewed|Neuronal                            cell adhesion molecule|taxID:960
+    4.3e-50  162.8  14.6    2.9e-15   51.2   0.0    6.4  1  P19320|reviewed|Vascular                            cell adhesion protein 1|taxID:96
+    5.2e-50  162.5   0.2    7.7e-12   40.2   0.1    7.2  0  P14781|reviewed|Contactin-1|taxID:9031|NF           
+    1.5e-49  161.1   0.1    5.2e-12   40.7   0.0    7.4  0  Q12860|reviewed|Contactin-1|taxID:9606|P            
+    1.8e-49  160.8   9.7    7.9e-13   43.4   0.0    5.6  0  P29534|reviewed|Vascular                            cell adhesion protein 1|taxID:10
+    4.5e-49  159.5   9.4    8.4e-15   49.7   0.0    7.4  0  Q28260|reviewed|Vascular                            cell adhesion protein 1|taxID:96
+    4.9e-49  159.4   1.9    3.8e-11   38.0   0.1    5.7  0  P36335|reviewed|Neural                              cell adhesion molecule 1-B|taxID
+    8.1e-49  158.7   0.1    1.2e-11   39.6   0.0    7.5  0  P12960|reviewed|Contactin-1|taxID:10090|P           
+    1.3e-48  158.1   0.1      7e-12   40.3   0.0    7.4  0  Q63198|reviewed|Contactin-1|taxID:10116|P           
+    1.5e-46  151.4   0.0    1.4e-11   39.3   0.0    7.0  0  O42414|reviewed|Neurofascin|taxID:9031|NF           
+    2.2e-46  150.9  16.7      2e-13   45.3   0.2    8.9  0  P17948|reviewed|Vascular                            endothelial growth factor recept
+    4.2e-46  150.0   0.5    3.5e-09   31.7   0.0    7.4  0  P97685|reviewed|Neurofascin|taxID:10116|NF          
+    4.2e-46  150.0   0.5    3.5e-09   31.7   0.0    7.4  0  P97685|reviewed|Neurofascin|taxID:10116|P           
+      5e-46  149.8   0.1    1.8e-09   32.6   0.0    7.2  0  Q810U3|reviewed|Neurofascin|taxID:10090|P           
+    5.5e-45  146.4   0.0    4.1e-09   31.5   0.0    7.0  0  O94856|reviewed|Neurofascin|taxID:9606|P            
+    6.8e-45  146.1   0.0    4.8e-18   60.1   0.0    3.2  1  P43629|reviewed|Killer                              cell immunoglobulin-like recepto
+    1.9e-44  144.7  17.3      3e-09   31.9   0.0    9.0  0  Q9U3P2|reviewed|Synaptogenesis                      protein syg-2|taxID:6239|NF
+    8.5e-44  142.6   0.4    5.2e-09   31.1   0.0    7.3  0  P32004|reviewed|Neural                              cell adhesion molecule L1|taxID:
+    1.5e-43  141.9   2.5    5.7e-11   37.4   0.0    7.4  0  O00533|reviewed|Neural                              cell adhesion molecule L1-like p
+    6.2e-43  139.8   8.5    1.7e-10   35.9   0.0    8.3  0  Q8QHL3|reviewed|Vascular                            endothelial growth factor recept
+    2.2e-42  138.1   0.6    5.7e-10   34.2   0.0    5.8  0  Q4KMG0|reviewed|Cell                                adhesion molecule-related/down-r
+    2.8e-42  137.7   0.0    5.6e-17   56.7   0.0    3.1  1  Q14943|reviewed|Killer                              cell immunoglobulin-like recepto
+    5.5e-42  136.8  19.0    6.7e-13   43.6   0.0    8.6  0  P35969|reviewed|Vascular                            endothelial growth factor recept
+    9.5e-42  136.0   0.2    1.6e-07   26.3   0.0    8.9  0  P56741|reviewed|Myosin-binding                      protein C, cardiac-type|taxID:10
+    1.5e-41  135.4   0.0    7.5e-14   46.6   0.0    5.0  0  P70211|reviewed|Netrin                              receptor DCC|taxID:10090|NF
+    4.4e-40  130.7  12.4    6.6e-15   50.0   0.1    4.7  1  Q925P2|reviewed|Carcinoembryonic                    antigen-related cell adhesion mo
+    3.5e-39  127.8   0.1    2.9e-12   41.5   0.0    6.0  0  Q9UPX0|reviewed|Protein                             turtle homolog B|taxID:9606|NF
+    1.2e-38  126.1   2.6    1.5e-07   26.5   0.1    9.6  0  Q9QZS7|reviewed|Nephrin|taxID:10090|NF              
+    1.6e-38  125.7   0.1    5.7e-08   27.8   0.0    9.0  0  Q14896|reviewed|Myosin-binding                      protein C, cardiac-type|taxID:96
+    1.6e-38  125.7   0.0    2.5e-14   48.2   0.0    3.2  0  P43630|reviewed|Killer                              cell immunoglobulin-like recepto
+    1.6e-38  125.7   0.0    1.3e-12   42.7   0.1    6.0  0  D3ZB51|reviewed|Protein                             turtle homolog B|taxID:10116|NF
+    5.6e-38  123.9   0.0      9e-11   36.8   0.0    5.0  0  Q2EY14|reviewed|Protogenin                          A|taxID:7955|NF
+    9.6e-38  123.2  13.0    8.5e-13   43.3   0.5    7.5  0  Q5MD89|reviewed|Vascular                            endothelial growth factor recept
+      1e-37  123.1  13.6    5.8e-19   63.0   1.1    4.7  1  P13688|reviewed|Carcinoembryonic                    antigen-related cell adhesion mo
+    1.7e-37  122.4   3.2    2.1e-18   61.3   0.0    3.7  1  P11834|reviewed|Opioid-binding                      protein/cell adhesion molecule|t
+    8.5e-37  120.2  14.1    4.2e-13   44.3   0.2    7.6  0  P35968|reviewed|Vascular                            endothelial growth factor recept
+    8.8e-37  120.1   3.7    9.4e-15   49.5   0.0    6.6  0  Q09165|reviewed|Mesocentin|taxID:6239|NF            
+    8.8e-37  120.1   3.7    9.4e-15   49.5   0.0    6.6  0  Q09165|reviewed|Mesocentin|taxID:6239|P             
+    1.5e-36  119.3  16.5    3.9e-12   41.1   0.1    7.9  0  Q8AXB3|reviewed|Vascular                            endothelial growth factor recept
+    2.4e-36  118.7   0.0      1e-11   39.8   0.0    4.7  0  Q90413|reviewed|Fibroblast                          growth factor receptor 4|taxID:7
+    3.5e-36  118.2   0.0    7.8e-13   43.4   0.0    7.5  0  Q5XKE0|reviewed|Myosin-binding                      protein C, fast-type|taxID:10090
+    3.8e-36  118.1   3.7    2.2e-19   64.4   0.1    3.7  1  P32736|reviewed|Opioid-binding                      protein/cell adhesion molecule|t
+    3.9e-36  118.0   0.3    9.9e-10   33.4   0.0    5.5  0  P34082|reviewed|Fasciclin-2|taxID:7227|NF           
+    4.5e-36  117.9   5.9    4.5e-18   60.2   0.0    4.2  1  Q62718|reviewed|Neurotrimin|taxID:10116|P           
+    6.2e-36  117.4   6.1    5.8e-18   59.8   0.0    4.2  1  Q99PJ0|reviewed|Neurotrimin|taxID:10090|P           
+    6.8e-36  117.3   0.4    8.4e-14   46.5   0.0    3.5  0  P21804|reviewed|Fibroblast                          growth factor receptor 1|taxID:9
+    7.5e-36  117.1   3.7      5e-13   44.0   0.1    6.6  0  B8VIW9|reviewed|Fibronectin                         type III domain-containing prote
+    1.2e-35  116.5   5.0    1.2e-17   58.8   0.0    4.2  1  Q9P121|reviewed|Neurotrimin|taxID:9606|P            
+    1.9e-35  115.9   0.1    6.3e-09   30.9   0.0    4.7  0  Q2VWP7|reviewed|Protogenin|taxID:9606|NF            
+    3.1e-35  115.2   0.0    4.5e-16   53.8   0.0    3.2  1  Q8N743|reviewed|Killer                              cell immunoglobulin-like recepto
+    8.2e-35  113.8   4.9    5.8e-17   56.6   0.0    4.3  1  Q90773|reviewed|Protein                             CEPU-1|taxID:9031|P
+    1.7e-34  112.8   0.3    1.2e-11   39.6   0.0    3.5  0  P16092|reviewed|Fibroblast                          growth factor receptor 1|taxID:1
+    1.9e-34  112.6   1.7    2.7e-12   41.6   0.1    3.7  0  P22182|reviewed|Fibroblast                          growth factor receptor 1|taxID:8
+    2.7e-34  112.2   0.2    9.4e-12   39.9   0.0    3.5  0  Q04589|reviewed|Fibroblast                          growth factor receptor 1|taxID:1
+    3.9e-34  111.6   0.0    5.2e-10   34.3   0.0    5.9  0  Q9P2J2|reviewed|Protein                             turtle homolog A|taxID:9606|NF
+    6.5e-34  110.9   0.4    4.4e-11   37.8   0.0    3.5  0  P11362|reviewed|Fibroblast                          growth factor receptor 1|taxID:9
+    2.1e-33  109.3   0.1    2.1e-10   35.6   0.1    6.0  0  Q05BQ1|reviewed|Protein                             turtle homolog A|taxID:10090|NF
+      5e-33  108.1   0.0    4.5e-10   34.5   0.1    6.0  0  P0C5H6|reviewed|Protein                             turtle homolog A|taxID:10116|NF
+    1.3e-32  106.8  16.5    9.3e-11   36.7   0.1    7.3  0  O08775|reviewed|Vascular                            endothelial growth factor recept
+    8.4e-32  104.2   0.0    1.1e-17   59.0   0.0    2.3  1  Q99706|reviewed|Killer                              cell immunoglobulin-like recepto
+    9.3e-31  100.8  12.3    3.1e-07   25.5   0.3   10.1  0  A8E0Y8|reviewed|Immunoglobulin                      superfamily member 2|taxID:10090
+    1.6e-30  100.1   6.9    2.1e-11   38.8   0.0    6.7  0  Q96P31|reviewed|Fc                                  receptor-like protein 3|taxID:96
+    1.8e-30   99.9   0.3    5.3e-10   34.3   0.0    4.2  0  Q8MJZ2|reviewed|Leukocyte                           immunoglobulin-like receptor sub
+    1.9e-30   99.8  13.7    1.9e-12   42.2   0.2    5.3  0  C0HJX2|reviewed|Leukocyte                           immunoglobulin-like receptor sub
+    1.9e-30   99.8  13.7    1.9e-12   42.2   0.2    5.3  0  C0HJX3|reviewed|Leukocyte                           immunoglobulin-like receptor sub
+    2.3e-30   99.6   0.8    3.7e-11   38.0   0.0    3.6  0  P18460|reviewed|Fibroblast                          growth factor receptor 3|taxID:9
+      1e-29   97.5   0.2    8.8e-09   30.4   0.0    5.0  0  B3N666|reviewed|Interference                        hedgehog|taxID:7220|NF
+    1.5e-29   96.9   0.0    9.9e-15   49.5   0.0    2.2  0  Q14953|reviewed|Killer                              cell immunoglobulin-like recepto
+    1.5e-29   96.9  21.6    3.9e-12   41.1   0.3    6.3  0  A0A0G2KBC9|reviewed|Leukocyte                       immunoglobulin-like receptor sub
+    2.1e-29   96.5   0.9    3.5e-11   38.1   0.0    3.5  0  Q91285|reviewed|Fibroblast                          growth factor receptor 1|taxID:8
+    2.2e-29   96.4   2.3    8.1e-13   43.3   0.1    5.7  0  P09619|reviewed|Platelet-derived                    growth factor receptor beta|taxI
+    5.9e-29   95.0   2.6    4.7e-08   28.1   0.0    6.0  0  Q9EPF2|reviewed|Cell                                surface glycoprotein MUC18|taxID
+    6.3e-29   95.0   5.6    2.2e-14   48.3   0.2    2.6  0  O54901|reviewed|OX-2                                membrane glycoprotein|taxID:1009
+    6.4e-29   94.9   2.6    2.9e-14   48.0   0.2    2.3  0  P04218|reviewed|OX-2                                membrane glycoprotein|taxID:1011
+    7.2e-29   94.8  17.1    1.7e-09   32.7   0.2    6.3  0  P97484|reviewed|Leukocyte                           immunoglobulin-like receptor sub
+    8.4e-29   94.6  15.3    3.7e-15   50.8   0.8    6.4  1  Q63111|reviewed|Carcinoembryonic                    antigen-related cell adhesion mo
+    1.1e-28   94.2   4.4    2.9e-12   41.6   0.1    6.1  0  P05622|reviewed|Platelet-derived                    growth factor receptor beta|taxI
+    1.1e-28   94.2   7.2    1.6e-12   42.4   0.1    5.9  0  Q05030|reviewed|Platelet-derived                    growth factor receptor beta|taxI
+    1.7e-28   93.6   0.0    8.9e-14   46.4   0.0    2.2  0  Q14954|reviewed|Killer                              cell immunoglobulin-like recepto
+    1.8e-28   93.5   0.0    1.4e-13   45.8   0.0    2.3  0  P43626|reviewed|Killer                              cell immunoglobulin-like recepto
+    1.9e-28   93.4   0.2    7.6e-11   37.0   0.0    3.6  0  Q9I8X3|reviewed|Fibroblast                          growth factor receptor 3|taxID:7
+      2e-28   93.3   0.0    8.1e-14   46.5   0.0    2.2  0  P43631|reviewed|Killer                              cell immunoglobulin-like recepto
+    2.6e-28   93.0   0.6    5.6e-09   31.0   0.0    5.8  0  B4N072|reviewed|Interference                        hedgehog|taxID:7260|P
+    7.5e-28   91.5   0.0    2.6e-13   44.9   0.0    2.3  0  P43628|reviewed|Killer                              cell immunoglobulin-like recepto
+    7.7e-28   91.5   0.2    7.9e-12   40.2   0.0    3.5  0  Q61851|reviewed|Fibroblast                          growth factor receptor 3|taxID:1
+    9.8e-28   91.1   0.8    5.8e-10   34.2   0.0    3.5  0  P83556|reviewed|Killer                              cell immunoglobulin-like recepto
+    1.1e-27   91.0   0.6    3.8e-17   57.2   0.0    3.7  1  O57261|reviewed|Interleukin-1-binding               protein|taxID:126794|P
+    1.5e-27   90.5   0.6    5.5e-17   56.7   0.0    3.8  1  P25212|reviewed|Interleukin-1-binding               protein|taxID:10254|P
+    1.8e-27   90.3   0.0    2.2e-13   45.2   0.0    2.2  0  P43632|reviewed|Killer                              cell immunoglobulin-like recepto
+      2e-27   90.1   0.0    3.1e-13   44.7   0.0    2.5  0  Q8N109|reviewed|Killer                              cell immunoglobulin-like recepto
+    2.9e-27   89.6   4.2    1.8e-14   48.6   0.1    5.4  0  P0DOX3|reviewed|Immunoglobulin                      delta heavy chain|taxID:9606|P
+    3.5e-27   89.4   1.4    9.1e-09   30.4   0.0    4.3  0  Q8N149|reviewed|Leukocyte                           immunoglobulin-like receptor sub
+    4.8e-27   88.9   1.1    7.3e-17   56.3   0.0    3.7  1  Q04523|reviewed|Interleukin-1-binding               protein|taxID:265872|P
+      6e-27   88.6   0.3    3.9e-08   28.3   0.0    4.3  0  P59901|reviewed|Leukocyte                           immunoglobulin-like receptor sub
+    6.4e-27   88.5   0.0    3.1e-13   44.7   0.0    2.5  0  Q8NHK3|reviewed|Killer                              cell immunoglobulin-like recepto
+    1.9e-26   87.0   0.0    8.8e-14   46.4   0.0    2.4  0  Q06806|reviewed|Tyrosine-protein                    kinase receptor Tie-1|taxID:1009
+      2e-26   86.9  13.5    1.1e-17   58.9   0.1    7.0  1  P13369|reviewed|Macrophage                          colony-stimulating factor 1 rece
+    2.3e-26   86.8   0.0    8.4e-13   43.3   0.0    2.3  0  P43627|reviewed|Killer                              cell immunoglobulin-like recepto
+    2.7e-26   86.5   1.2    9.3e-15   49.5   0.1    3.7  0  P27930|reviewed|Interleukin-1                       receptor type 2|taxID:9606|P
+    3.1e-26   86.3  10.7    7.8e-07   24.2   0.0    7.8  0  P52179|reviewed|Myomesin-1|taxID:9606|NF            
+    3.2e-26   86.3   0.0      6e-13   43.8   0.0    2.2  0  Q14952|reviewed|Killer                              cell immunoglobulin-like recepto
+    3.4e-26   86.2   1.9    3.5e-08   28.5   0.0    5.5  0  Q29JX6|reviewed|Interference                        hedgehog|taxID:46245|NF
+    3.7e-26   86.1  14.3    1.1e-17   58.9   0.1    7.0  1  P00545|reviewed|Tyrosine-protein                    kinase transforming protein fms|
+    4.8e-26   85.7   7.3    5.1e-07   24.8   0.0    4.9  0  Q09147|reviewed|Fibroblast                          growth factor receptor homolog 2
+    4.8e-26   85.7   9.4    4.3e-11   37.8   0.0    6.8  0  Q00495|reviewed|Macrophage                          colony-stimulating factor 1 rece
+    4.9e-26   85.7   1.6    1.3e-14   49.0   0.1    3.5  0  P01880|reviewed|Immunoglobulin                      heavy constant delta|taxID:9606|
+      1e-25   84.7   1.6    1.8e-10   35.8   0.1    5.7  0  Q6QNF3|reviewed|Platelet-derived                    growth factor receptor beta|taxI
+    1.5e-25   84.1   9.3    4.3e-11   37.8   0.0    6.9  0  P09581|reviewed|Macrophage                          colony-stimulating factor 1 rece
+    1.9e-25   83.8   1.4    2.2e-15   51.6   0.0    4.4  1  P01875|reviewed|Ig                                  mu chain C region|taxID:9031|P
+      2e-25   83.7   5.4      2e-11   38.9   0.0    5.2  0  Q96PJ5|reviewed|Fc                                  receptor-like protein 4|taxID:96
+    2.3e-25   83.5  11.3    1.3e-14   49.1   0.1    6.5  0  P07333|reviewed|Macrophage                          colony-stimulating factor 1 rece
+    2.6e-25   83.4   0.1    1.8e-09   32.6   0.1    3.3  0  Q9H7L2|reviewed|Putative                            killer cell immunoglobulin-like 
+      5e-25   82.4   6.5    1.8e-10   35.8   0.1    4.6  0  P03988|reviewed|Ig                                  mu chain C region secreted form|
+    6.6e-25   82.1   6.5      2e-10   35.7   0.1    4.6  0  P04221|reviewed|Ig                                  mu chain C region membrane-bound
+    2.2e-24   80.4   9.7    8.6e-13   43.2   0.4    8.5  0  Q3UKK2|reviewed|Carcinoembryonic                    antigen-related cell adhesion mo
+    2.9e-24   80.0   1.0    8.1e-11   36.9   0.1    3.4  0  P83555|reviewed|Killer                              cell immunoglobulin-like recepto
+    5.5e-24   79.1   0.8    7.9e-18   59.4   0.0    2.6  1  P21975|reviewed|Putative                            Ig-like V-type domain-containing
+    1.3e-23   78.0  12.2    2.7e-07   25.6   0.0    5.6  0  B4KJW1|reviewed|Interference                        hedgehog|taxID:7230|NF
+    1.3e-23   78.0  12.2    2.7e-07   25.6   0.0    5.6  0  B4KJW1|reviewed|Interference                        hedgehog|taxID:7230|P
+    4.3e-23   76.3   3.7    2.8e-07   25.6   0.0    6.7  0  Q9N3X8|reviewed|Protein                             sidekick homolog|taxID:6239|NF
+    6.4e-23   75.7   1.2    2.4e-11   38.6   0.1    2.4  0  P41217|reviewed|OX-2                                membrane glycoprotein|taxID:9606
+    6.7e-23   75.6   0.0    2.1e-08   29.2   0.0    4.4  0  Q6PI73|reviewed|Leukocyte                           immunoglobulin-like receptor sub
+    2.2e-22   74.0   0.1      6e-07   24.5   0.0    4.3  0  Q8N423|reviewed|Leukocyte                           immunoglobulin-like receptor sub
+    2.7e-22   73.7   7.2    2.3e-07   25.8   0.0    5.0  0  P0DOX2|reviewed|Immunoglobulin                      alpha-2 heavy chain|taxID:9606|P
+      4e-22   73.1   0.0    6.2e-12   40.5   0.0    3.9  0  Q28173|reviewed|Advanced                            glycosylation end product-specif
+    4.1e-22   73.1   0.7    3.2e-11   38.2   0.0    3.9  0  Q29612|reviewed|Interleukin-1                       receptor type 2|taxID:9534|P
+    5.9e-22   72.6   0.2    6.7e-08   27.6   0.0    4.6  0  O75022|reviewed|Leukocyte                           immunoglobulin-like receptor sub
+    1.3e-21   71.5   0.5    2.4e-07   25.8   0.0    4.4  0  Q8NHL6|reviewed|Leukocyte                           immunoglobulin-like receptor sub
+    1.4e-21   71.4   0.1    6.6e-07   24.4   0.0    4.8  0  F1NWE3|reviewed|Receptor-type                       tyrosine-protein phosphatase S|t
+    1.5e-21   71.3   0.4    3.7e-13   44.4   0.0    3.5  0  P26151|reviewed|High                                affinity immunoglobulin gamma Fc
+    1.6e-21   71.2   0.1    5.3e-12   40.7   0.0    4.3  0  Q62151|reviewed|Advanced                            glycosylation end product-specif
+    2.6e-21   70.6   1.4    2.7e-18   60.9   0.8    2.5  1  Q5IS37|reviewed|NT-3                                growth factor receptor|taxID:959
+    2.6e-21   70.5   1.4    2.8e-18   60.8   0.8    2.5  1  Q16288|reviewed|NT-3                                growth factor receptor|taxID:960
+    2.6e-21   70.5   1.4    2.7e-18   60.9   0.8    2.5  1  Q5IFJ9|reviewed|NT-3                                growth factor receptor|taxID:954
+    4.7e-21   69.7   1.4    5.6e-10   34.2   0.1    3.6  0  P27931|reviewed|Interleukin-1                       receptor type 2|taxID:10090|P
+    5.4e-21   69.5   1.2    1.6e-18   61.6   0.8    2.5  1  Q5IS82|reviewed|NT-3                                growth factor receptor|taxID:394
+    5.6e-21   69.5   0.0    1.8e-12   42.2   0.0    2.4  0  Q06805|reviewed|Tyrosine-protein                    kinase receptor Tie-1|taxID:9913
+    6.8e-21   69.2   0.0    7.8e-12   40.2   0.0    2.5  0  P35590|reviewed|Tyrosine-protein                    kinase receptor Tie-1|taxID:9606
+    6.8e-21   69.2   0.0    7.8e-12   40.2   0.0    2.5  0  P35590|reviewed|Tyrosine-protein                    kinase receptor Tie-1|taxID:9606
+    1.8e-20   67.8   2.2    8.5e-16   52.9   0.6    2.5  1  Q91044|reviewed|NT-3                                growth factor receptor|taxID:903
+    2.5e-20   67.4   1.7    1.3e-10   36.2   0.0    4.4  0  Q9XS78|reviewed|T-cell                              surface glycoprotein CD4|taxID:9
+    2.7e-20   67.3  11.3      7e-18   59.5   1.8    3.9  1  P10721|reviewed|Mast/stem                           cell growth factor receptor Kit|
+    2.8e-20   67.3   2.5    3.4e-13   44.5   0.1    2.3  0  Q6UXZ0|reviewed|Transmembrane                       and immunoglobulin domain-contai
+      3e-20   67.2   0.0    1.6e-07   26.4   0.0    4.4  0  O75023|reviewed|Leukocyte                           immunoglobulin-like receptor sub
+      3e-20   67.1   1.3    9.1e-16   52.8   0.0    4.1  1  P06332|reviewed|T-cell                              surface glycoprotein CD4|taxID:1
+    4.7e-20   66.5   0.0    3.3e-06   22.2   0.0    5.0  0  B0V2N1|reviewed|Receptor-type                       tyrosine-protein phosphatase S|t
+    5.7e-20   66.3   2.1    2.9e-18   60.8   0.8    2.6  1  Q03351|reviewed|NT-3                                growth factor receptor|taxID:101
+    5.8e-20   66.2   2.1    2.7e-18   60.9   0.8    2.5  1  Q6VNS1|reviewed|NT-3                                growth factor receptor|taxID:100
+    9.1e-20   65.6   1.7    2.6e-17   57.8   1.0    2.5  1  P24786|reviewed|NT-3                                growth factor receptor|taxID:982
+    1.4e-19   65.0   3.8    5.1e-11   37.6   0.0    3.6  0  P12314|reviewed|High                                affinity immunoglobulin gamma Fc
+    2.1e-19   64.5  12.6    9.1e-15   49.6   0.1    5.0  0  P01855|reviewed|Immunoglobulin                      heavy constant epsilon|taxID:101
+    2.6e-19   64.2   1.7    6.6e-08   27.6   0.1    3.5  0  P43303|reviewed|Interleukin-1                       receptor type 2|taxID:10116|P
+    3.2e-19   63.9   6.0    1.8e-07   26.2   0.0    3.9  0  P01877|reviewed|Immunoglobulin                      heavy constant alpha 2|taxID:960
+    3.3e-19   63.8   1.1      3e-11   38.3   0.1    2.4  0  Q5RAL8|reviewed|OX-2                                membrane glycoprotein|taxID:9601
+    3.5e-19   63.7   6.4    3.8e-07   25.2   0.0    4.2  0  P20758|reviewed|Ig                                  alpha-1 chain C region|taxID:959
+    4.1e-19   63.5   3.3    1.2e-13   46.0   0.1    4.0  0  P16004|reviewed|T-cell                              surface glycoprotein CD4|taxID:9
+    4.3e-19   63.5  14.4    9.8e-16   52.7   0.1    4.6  1  P06336|reviewed|Immunoglobulin                      heavy constant epsilon|taxID:100
+    4.4e-19   63.4   1.8    3.4e-13   44.5   0.0    4.0  0  P01730|reviewed|T-cell                              surface glycoprotein CD4|taxID:9
+    5.1e-19   63.2  10.8      1e-16   55.9   1.4    3.9  1  Q76II0|reviewed|Mast/stem                           cell growth factor receptor Kit|
+    7.5e-19   62.7   0.0    7.3e-07   24.2   0.0    4.5  0  Q8MJZ7|reviewed|Leukocyte                           immunoglobulin-like receptor sub
+    8.1e-19   62.6   5.3    4.7e-07   24.9   0.0    4.1  0  P01876|reviewed|Immunoglobulin                      heavy constant alpha 1|taxID:960
+    1.4e-18   61.8   4.4    1.4e-11   39.4   0.2    3.2  0  Q9JKA5|reviewed|Cell                                surface A33 antigen|taxID:10090|
+    1.5e-18   61.7   0.0    3.6e-07   25.2   0.0    4.1  0  Q5BK54|reviewed|Lymphocyte                          activation gene 3 protein|taxID:
+    1.8e-18   61.4   9.1    1.2e-07   26.7   0.1    5.7  0  Q8AXC7|reviewed|Platelet-derived                    growth factor receptor alpha|tax
+    2.1e-18   61.3   0.4      1e-05   20.6   0.0    4.8  0  A2A8L5|reviewed|Receptor-type                       tyrosine-protein phosphatase F|t
+    3.9e-18   60.4   2.0    1.4e-08   29.7   0.4    3.5  0  Q18806|reviewed|Neuronal                            immunoglobulin domain-containing
+      1e-17   59.0   0.1    2.4e-05   19.4   0.0    4.2  0  P23468|reviewed|Receptor-type                       tyrosine-protein phosphatase del
+    1.2e-17   58.8   0.4    1.5e-09   32.9   0.2    2.2  0  Q22125|reviewed|Zwei                                Ig domain protein zig-6|taxID:62
+    1.6e-17   58.4   2.9    1.2e-12   42.7   0.1    3.9  0  P16003|reviewed|T-cell                              surface glycoprotein CD4|taxID:9
+    1.6e-17   58.4   0.0    5.2e-09   31.1   0.0    3.8  0  Q7YQL9|reviewed|Interleukin-1                       receptor accessory protein-like 
+    1.6e-17   58.4   0.0    5.2e-09   31.1   0.0    3.8  0  P60029|reviewed|Interleukin-1                       receptor accessory protein-like 
+    1.6e-17   58.4   0.0    5.2e-09   31.1   0.0    3.8  0  Q9NZN1|reviewed|Interleukin-1                       receptor accessory protein-like 
+    2.1e-17   58.0   5.5    8.4e-13   43.3   0.1    3.9  0  Q08340|reviewed|T-cell                              surface glycoprotein CD4|taxID:9
+    3.1e-17   57.5   3.9    1.2e-12   42.7   0.1    3.9  0  P79184|reviewed|T-cell                              surface glycoprotein CD4|taxID:9
+    4.4e-17   57.0   5.9    1.2e-12   42.7   0.1    3.9  0  P79185|reviewed|T-cell                              surface glycoprotein CD4|taxID:9
+    5.4e-17   56.7   3.3    9.5e-12   39.9   0.1    3.9  0  Q08336|reviewed|T-cell                              surface glycoprotein CD4|taxID:9
+    7.1e-17   56.3  13.1    3.8e-07   25.1   0.3    7.2  0  Q3SWT0|reviewed|Platelet                            endothelial cell adhesion molecu
+    7.3e-17   56.3   0.1    1.1e-11   39.7   0.0    3.2  0  Q8C310|reviewed|Roundabout                          homolog 4|taxID:10090|NF
+    8.1e-17   56.1   5.0    2.5e-07   25.7   0.0    3.9  0  Q9NYZ4|reviewed|Sialic                              acid-binding Ig-like lectin 8|ta
+    9.9e-17   55.9   3.4    1.1e-11   39.7   0.2    3.8  0  Q08338|reviewed|T-cell                              surface glycoprotein CD4|taxID:9
+    1.5e-16   55.3   0.0    1.2e-08   30.0   0.0    3.8  0  P59824|reviewed|Interleukin-1                       receptor accessory protein-like 
+    2.5e-16   54.6   0.0    9.2e-09   30.3   0.0    3.8  0  P59823|reviewed|Interleukin-1                       receptor accessory protein-like 
+    2.5e-16   54.6  11.6    2.6e-14   48.1   0.6    4.4  0  P43481|reviewed|Mast/stem                           cell growth factor receptor Kit|
+    2.6e-16   54.5   0.3    3.5e-12   41.3   0.0    3.9  0  P05540|reviewed|T-cell                              surface glycoprotein CD4|taxID:1
+    2.7e-16   54.5  12.7    1.1e-11   39.6   0.1    5.1  0  Q08156|reviewed|Mast/stem                           cell growth factor receptor Kit|
+    4.7e-16   53.7   0.1    1.9e-15   51.8   0.0    2.1  1  P28827|reviewed|Receptor-type                       tyrosine-protein phosphatase mu|
+    5.6e-16   53.5   0.2    1.8e-07   26.2   0.0    6.0  0  Q2KJF1|reviewed|Alpha-1B-glycoprotein|taxID:9913|P  
+    6.1e-16   53.3   5.9    3.9e-11   37.9   0.2    3.9  0  Q08339|reviewed|T-cell                              surface glycoprotein CD4|taxID:9
+    8.4e-16   52.9   0.1    7.3e-08   27.5   0.3    3.0  0  O43699|reviewed|Sialic                              acid-binding Ig-like lectin 6|ta
+    8.4e-16   52.9   2.1    1.3e-07   26.7   0.3    3.5  0  P14719|reviewed|Interleukin-1                       receptor-like 1|taxID:10090|P
+    1.8e-15   51.8   1.0    1.8e-15   51.8   1.0    4.8  1  P05532|reviewed|Mast/stem                           cell growth factor receptor Kit|
+    1.8e-15   51.8   1.0      9e-10   33.6   0.1    3.0  0  G5ED00|reviewed|Zwei                                Ig domain protein zig-8|taxID:62
+    1.9e-15   51.8   0.9    9.3e-09   30.3   0.0    2.7  0  Q9Z0H5|reviewed|Natural                             cytotoxicity triggering receptor
+    3.1e-15   51.1  11.5      1e-13   46.2   0.6    4.4  0  Q28317|reviewed|Mast/stem                           cell growth factor receptor Kit|
+    3.4e-15   50.9   2.9    1.3e-13   45.8   0.0    3.8  0  Q00342|reviewed|Receptor-type                       tyrosine-protein kinase FLT3|tax
+    4.5e-15   50.5   3.2    1.9e-08   29.3   0.1    3.1  0  A0A7H0DNG2|reviewed|Soluble                         interferon alpha/beta receptor O
+    4.7e-15   50.5   0.0    1.4e-14   49.0   0.0    1.9  0  P28828|reviewed|Receptor-type                       tyrosine-protein phosphatase mu|
+
+
+Domain annotation for each sequence (and alignments):
+>> A2ASS6|reviewed|Titin|taxID:10090|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> G4SLH0|reviewed|Titin  homolog|taxID:6239|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q06561|reviewed|Basement  membrane proteoglycan|taxID:6239|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q62230|reviewed|Sialoadhesin|taxID:10090|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q15746|reviewed|Myosin  light chain kinase, smooth muscle|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9ERC8|reviewed|Cell  adhesion molecule DSCAM|taxID:10090|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P20241|reviewed|Neuroglian|taxID:7227|P  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   56.3   0.1   3.5e-17   7.2e-17       3      80 ..     256     329 ..     254     330 .. 0.96
+   2 !   57.8   0.0   1.2e-17   2.5e-17       1      80 [.     528     606 ..     528     607 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 56.3 bits;  conditional E-value: 3.5e-17
+                                msa_train   3 vtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaGtYtCvvnn 72 
+                                               ++l+G++++L C +  g+p p+  Wsk+g+++++s++    ++++++ sl i+++ ++daGtYtC v+n
+  P20241|reviewed|Neuroglian|taxID:7227|P 256 SLALRGKRMELFCIYG-GTPLPQTVWSKDGQRIQWSDR---ITQGHYGKSLVIRQTNFDDAGTYTCDVSN 321
+                                              56789***********.*********************...***************************** PP
+
+                                msa_train  73 pggsatls 80 
+                                                g+a+++
+  P20241|reviewed|Neuroglian|taxID:7227|P 322 GVGNAQSF 329
+                                              ****9986 PP
+
+  == domain 2  score: 57.8 bits;  conditional E-value: 1.2e-17
+                                msa_train   1 ptvtvleGesatLtCsas.egspgpdvtWskegktkieslkvkedngrttqssllisnvteedaGtYtCv 69 
+                                              ++++v +G+sat++C+   +++  +++ W+k+g++++ +++  + + +t ++sl+i+++ e d+G+YtCv
+  P20241|reviewed|Neuroglian|taxID:7227|P 528 QNYEVAAGQSATFRCNEAhDDTLEIEIDWWKDGQSIDFEAQ--PRFVKTNDNSLTIAKTMELDSGEYTCV 595
+                                              5899***********************************99..*************************** PP
+
+                                msa_train  70 vnnpggsatls 80 
+                                              +++++++at++
+  P20241|reviewed|Neuroglian|taxID:7227|P 596 ARTRLDEATAR 606
+                                              *****999987 PP
+
+>> Q8AXZ4|reviewed|Contactin-1a|taxID:7955|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8AXZ4|reviewed|Contactin-1a|taxID:7955|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P13595|reviewed|Neural  cell adhesion molecule 1|taxID:10090|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O15394|reviewed|Neural  cell adhesion molecule 2|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O89026|reviewed|Roundabout  homolog 1|taxID:10090|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q28106|reviewed|Contactin-1|taxID:9913|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P97528|reviewed|Contactin-6|taxID:10116|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O55005|reviewed|Roundabout  homolog 1|taxID:10116|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q7ZW34|reviewed|Contactin-5|taxID:7955|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q92823|reviewed|Neuronal  cell adhesion molecule|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P19320|reviewed|Vascular  cell adhesion protein 1|taxID:9606|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   51.2   0.0   1.4e-15   2.9e-15       1      79 [.     232     302 ..     232     304 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 51.2 bits;  conditional E-value: 1.4e-15
+                 msa_train   1 ptvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaGtYtCvvnnpggsatl 79 
+                               p++ ++eG+s+t+tCs++ g p+p+++Wsk+ +  ++++        +++++l+++ +++ed+G Y C++ n  g++ +
+  P19320|reviewed|Vascular 232 PSTKLQEGGSVTMTCSSE-GLPAPEIFWSKKLDNGNLQHL-------SGNATLTLIAMRMEDSGIYVCEGVNLIGKNRK 302
+                               57899*************.*********************.......*************************9998765 PP
+
+>> P14781|reviewed|Contactin-1|taxID:9031|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q12860|reviewed|Contactin-1|taxID:9606|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P29534|reviewed|Vascular  cell adhesion protein 1|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q28260|reviewed|Vascular  cell adhesion protein 1|taxID:9615|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P36335|reviewed|Neural  cell adhesion molecule 1-B|taxID:8355|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P12960|reviewed|Contactin-1|taxID:10090|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q63198|reviewed|Contactin-1|taxID:10116|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O42414|reviewed|Neurofascin|taxID:9031|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P17948|reviewed|Vascular  endothelial growth factor receptor 1|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P97685|reviewed|Neurofascin|taxID:10116|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P97685|reviewed|Neurofascin|taxID:10116|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q810U3|reviewed|Neurofascin|taxID:10090|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O94856|reviewed|Neurofascin|taxID:9606|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P43629|reviewed|Killer  cell immunoglobulin-like receptor 3DL1|taxID:9606|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   60.1   0.0   2.3e-18   4.8e-18       1      80 [.      35     107 ..      35     108 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 60.1 bits;  conditional E-value: 2.3e-18
+               msa_train   1 ptvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaGtYtCvvnnpggsatls 80 
+                             p+ +v++G+++tL+C+++  + + ++++ ke+  +i   +     gr++q+s+++s+vt  +aG+YtC++++p++++ +s
+  P43629|reviewed|Killer  35 PSAVVPRGGHVTLRCHYR--HRFNNFMLYKEDRIHIPIFH-----GRIFQESFNMSPVTTAHAGNYTCRGSHPHSPTGWS 107
+                             5789**************..********************.....*******************************9997 PP
+
+>> Q9U3P2|reviewed|Synaptogenesis  protein syg-2|taxID:6239|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P32004|reviewed|Neural  cell adhesion molecule L1|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O00533|reviewed|Neural  cell adhesion molecule L1-like protein|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8QHL3|reviewed|Vascular  endothelial growth factor receptor 1|taxID:9031|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q4KMG0|reviewed|Cell  adhesion molecule-related/down-regulated by oncogenes|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q14943|reviewed|Killer  cell immunoglobulin-like receptor 3DS1|taxID:9606|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   56.7   0.0   2.7e-17   5.6e-17       1      80 [.      35     107 ..      35     108 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 56.7 bits;  conditional E-value: 2.7e-17
+               msa_train   1 ptvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaGtYtCvvnnpggsatls 80 
+                             p+ +v++G+++tL+C+++  + + ++++ ke+  +    +     gr++q+ +++s+vt  +aG+YtC++++p++++ +s
+  Q14943|reviewed|Killer  35 PSAVVPRGGHVTLRCHYR--HRFNNFMLYKEDRIHVPIFH-----GRIFQEGFNMSPVTTAHAGNYTCRGSHPHSPTGWS 107
+                             5789**************..********************.....*******************************9997 PP
+
+>> P35969|reviewed|Vascular  endothelial growth factor receptor 1|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P56741|reviewed|Myosin-binding  protein C, cardiac-type|taxID:10116|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P70211|reviewed|Netrin  receptor DCC|taxID:10090|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q925P2|reviewed|Carcinoembryonic  antigen-related cell adhesion molecule 2|taxID:10090|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   50.0   0.1   3.2e-15   6.6e-15       2      78 ..     333     404 ..     332     407 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 50.0 bits;  conditional E-value: 3.2e-15
+                         msa_train   2 tvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaGtYtCvvnnpggsat 78 
+                                       ++tv+e +s+tLtC ++  + +++++W+++++t+  ++k   +++++ +  l i++ ++edaG+Y C+ +np +++ 
+  Q925P2|reviewed|Carcinoembryonic 333 NTTVKELDSVTLTCLSK--DRQAHIHWIFNNDTLLITEK---MTTSQAGLILKIDPIKREDAGEYQCEISNPVSVKR 404
+                                       789**************..********************...99****************************99876 PP
+
+>> Q9UPX0|reviewed|Protein  turtle homolog B|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9QZS7|reviewed|Nephrin|taxID:10090|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q14896|reviewed|Myosin-binding  protein C, cardiac-type|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P43630|reviewed|Killer  cell immunoglobulin-like receptor 3DL2|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> D3ZB51|reviewed|Protein  turtle homolog B|taxID:10116|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q2EY14|reviewed|Protogenin  A|taxID:7955|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q5MD89|reviewed|Vascular  endothelial growth factor receptor 3|taxID:7955|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P13688|reviewed|Carcinoembryonic  antigen-related cell adhesion molecule 1|taxID:9606|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   63.0   1.1   2.8e-19   5.8e-19       2      79 ..     335     407 ..     334     408 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 63.0 bits;  conditional E-value: 2.8e-19
+                         msa_train   2 tvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaGtYtCvvnnpggsat 78 
+                                       t+++ + +s++LtCs++  ++g+++ W+++++++++s++   ++ ++++++l i++v++edaGtY+C+v np ++++
+  P13688|reviewed|Carcinoembryonic 335 TTVTGDKDSVNLTCSTN--DTGISIRWFFKNQSLPSSER---MKLSQGNTTLSINPVKREDAGTYWCEVFNPISKNQ 406
+                                       56677899*********..********************...********************************988 PP
+
+                         msa_train  79 l 79 
+                                       +
+  P13688|reviewed|Carcinoembryonic 407 S 407
+                                       5 PP
+
+>> P11834|reviewed|Opioid-binding  protein/cell adhesion molecule|taxID:9913|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   61.3   0.0     1e-18   2.1e-18       2      80 ..     231     308 ..     230     309 .. 0.96
+
+  Alignments for each domain:
+  == domain 1  score: 61.3 bits;  conditional E-value: 1e-18
+                       msa_train   2 tvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaGtYtCvvnnpggsatls 80 
+                                     ++ v++G++  L+C+as + p ++++W+ke++++ ++l+ ++ +++ ++s+l++ nv+e+d G+YtCv++n +g +++s
+  P11834|reviewed|Opioid-binding 231 NTGVSVGQKGILSCEAS-AVPMAEFQWFKEDTRLATGLDGMRIENKGHISTLTFFNVSEKDYGNYTCVATNKLGITNAS 308
+                                     67899************.********************************************************99986 PP
+
+>> P35968|reviewed|Vascular  endothelial growth factor receptor 2|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q09165|reviewed|Mesocentin|taxID:6239|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q09165|reviewed|Mesocentin|taxID:6239|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8AXB3|reviewed|Vascular  endothelial growth factor receptor kdr-like|taxID:7955|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q90413|reviewed|Fibroblast  growth factor receptor 4|taxID:7955|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q5XKE0|reviewed|Myosin-binding  protein C, fast-type|taxID:10090|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P32736|reviewed|Opioid-binding  protein/cell adhesion molecule|taxID:10116|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   64.4   0.1   1.1e-19   2.2e-19       2      80 ..     231     308 ..     230     309 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 64.4 bits;  conditional E-value: 1.1e-19
+                       msa_train   2 tvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaGtYtCvvnnpggsatls 80 
+                                     ++ v++G++  L+C+as + p ++++W+ke++++ ++l+ ++ +++ ++s+l++ nv+e+d G+YtCv++n +g++++s
+  P32736|reviewed|Opioid-binding 231 NTGVSVGQKGILSCEAS-AVPMAEFQWFKEDTRLATGLDGVRIENKGRISTLTFFNVSEKDYGNYTCVATNKLGNTNAS 308
+                                     67899************.**********************************************************987 PP
+
+>> P34082|reviewed|Fasciclin-2|taxID:7227|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q62718|reviewed|Neurotrimin|taxID:10116|P  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   60.2   0.0   2.2e-18   4.5e-18       3      80 ..     231     307 ..     229     308 .. 0.96
+
+  Alignments for each domain:
+  == domain 1  score: 60.2 bits;  conditional E-value: 2.2e-18
+                                  msa_train   3 vtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaGtYtCvv 70 
+                                                + v++G++ tL+C+as + p ++++W+k++k++ e+ k ++ ++r + s l++ nv+e d G+YtCv+
+  Q62718|reviewed|Neurotrimin|taxID:10116|P 231 TGVPVGQKGTLQCEAS-AVPSAEFQWFKDDKRLVEGKKGVKVENRPFLSRLTFFNVSEHDYGNYTCVA 297
+                                                6799************.*************************************************** PP
+
+                                  msa_train  71 nnpggsatls 80 
+                                                +n +g++++s
+  Q62718|reviewed|Neurotrimin|taxID:10116|P 298 SNKLGHTNAS 307
+                                                ******9987 PP
+
+>> Q99PJ0|reviewed|Neurotrimin|taxID:10090|P  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   59.8   0.0   2.8e-18   5.8e-18       3      80 ..     231     307 ..     229     308 .. 0.96
+
+  Alignments for each domain:
+  == domain 1  score: 59.8 bits;  conditional E-value: 2.8e-18
+                                  msa_train   3 vtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaGtYtCvv 70 
+                                                + v++G++ tL+C+as + p ++++W+k++k++ e+ k ++ ++r + s l++ nv+e d G+YtCv+
+  Q99PJ0|reviewed|Neurotrimin|taxID:10090|P 231 TGVPVGQKGTLQCEAS-AVPSAEFQWFKDDKRLVEGKKGVKVENRPFLSKLTFFNVSEHDYGNYTCVA 297
+                                                6799************.*************************************************** PP
+
+                                  msa_train  71 nnpggsatls 80 
+                                                +n +g++++s
+  Q99PJ0|reviewed|Neurotrimin|taxID:10090|P 298 SNKLGHTNAS 307
+                                                ******9987 PP
+
+>> P21804|reviewed|Fibroblast  growth factor receptor 1|taxID:9031|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> B8VIW9|reviewed|Fibronectin  type III domain-containing protein|taxID:45264|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9P121|reviewed|Neurotrimin|taxID:9606|P  
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   58.8   0.0   5.9e-18   1.2e-17       3      80 ..     231     307 ..     229     308 .. 0.96
+
+  Alignments for each domain:
+  == domain 1  score: 58.8 bits;  conditional E-value: 5.9e-18
+                                 msa_train   3 vtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaGtYtCvvn 71 
+                                               + v++G++ tL+C+as + p ++++W k++k++ie+ k ++ ++r + s l + nv+e d G+YtCv++
+  Q9P121|reviewed|Neurotrimin|taxID:9606|P 231 TGVPVGQKGTLQCEAS-AVPSAEFQWYKDDKRLIEGKKGVKVENRPFLSKLIFFNVSEHDYGNYTCVAS 298
+                                               6799************.**************************************************** PP
+
+                                 msa_train  72 npggsatls 80 
+                                               n +g++++s
+  Q9P121|reviewed|Neurotrimin|taxID:9606|P 299 NKLGHTNAS 307
+                                               *****9987 PP
+
+>> Q2VWP7|reviewed|Protogenin|taxID:9606|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8N743|reviewed|Killer  cell immunoglobulin-like receptor 3DL3|taxID:9606|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   53.8   0.0   2.2e-16   4.5e-16       1      80 [.      35     107 ..      35     108 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 53.8 bits;  conditional E-value: 2.2e-16
+               msa_train   1 ptvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaGtYtCvvnnpggsatls 80 
+                             p+++v+eG+++tL+C+++    + ++++ske++ +  +l+     +r++ +s+l+ +vt+ +aGtY+C  ++p++++ +s
+  Q8N743|reviewed|Killer  35 PGTVVSEGQHVTLQCRSR--LGFNEFSLSKEDGMPVPELY-----NRIFRNSFLMGPVTPAHAGTYRCCSSHPHSPTGWS 107
+                             5789**************..********************.....*******************************9997 PP
+
+>> Q90773|reviewed|Protein  CEPU-1|taxID:9031|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   56.6   0.0   2.8e-17   5.8e-17       2      81 .]     228     306 ..     227     306 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 56.6 bits;  conditional E-value: 2.8e-17
+                msa_train   2 tvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaGtYtCvvnnpggsatlst 81 
+                              ++ v++G++  L C+as + p +d++W k++k++ e++k  + +++ + s l++ nv+e+d G+YtCv++n +g++++s+
+  Q90773|reviewed|Protein 228 STGVPVGQKGILMCEAS-AVPSADFQWYKDDKRLAEGQKGLKVENKAFFSRLTFFNVSEQDYGNYTCVASNQLGNTNASM 306
+                              57799************.***********************************************************986 PP
+
+>> P16092|reviewed|Fibroblast  growth factor receptor 1|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P22182|reviewed|Fibroblast  growth factor receptor 1|taxID:8355|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q04589|reviewed|Fibroblast  growth factor receptor 1|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9P2J2|reviewed|Protein  turtle homolog A|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P11362|reviewed|Fibroblast  growth factor receptor 1|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q05BQ1|reviewed|Protein  turtle homolog A|taxID:10090|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P0C5H6|reviewed|Protein  turtle homolog A|taxID:10116|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O08775|reviewed|Vascular  endothelial growth factor receptor 2|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q99706|reviewed|Killer  cell immunoglobulin-like receptor 2DL4|taxID:9606|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   59.0   0.0   5.2e-18   1.1e-17       1      80 [.      37     109 ..      37     110 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 59.0 bits;  conditional E-value: 5.2e-18
+               msa_train   1 ptvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaGtYtCvvnnpggsatls 80 
+                             p+ +v++G+++tL+C+++  + + ++t+ k+++++  +l+     +r++ +s+lis+vt+ +aGtY+C++ +p++++++s
+  Q99706|reviewed|Killer  37 PSAVVPQGGHVTLRCHYR--RGFNIFTLYKKDGVPVPELY-----NRIFWNSFLISPVTPAHAGTYRCRGFHPHSPTEWS 109
+                             5789**************..********************.....********************************998 PP
+
+>> A8E0Y8|reviewed|Immunoglobulin  superfamily member 2|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q96P31|reviewed|Fc  receptor-like protein 3|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8MJZ2|reviewed|Leukocyte  immunoglobulin-like receptor subfamily A member 6|taxID:9598|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> C0HJX2|reviewed|Leukocyte  immunoglobulin-like receptor subfamily B member 3A|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> C0HJX3|reviewed|Leukocyte  immunoglobulin-like receptor subfamily B member 3B|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P18460|reviewed|Fibroblast  growth factor receptor 3|taxID:9031|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> B3N666|reviewed|Interference  hedgehog|taxID:7220|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q14953|reviewed|Killer  cell immunoglobulin-like receptor 2DS5|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> A0A0G2KBC9|reviewed|Leukocyte  immunoglobulin-like receptor subfamily B member 3-like|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q91285|reviewed|Fibroblast  growth factor receptor 1|taxID:8319|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P09619|reviewed|Platelet-derived  growth factor receptor beta|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9EPF2|reviewed|Cell  surface glycoprotein MUC18|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O54901|reviewed|OX-2  membrane glycoprotein|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P04218|reviewed|OX-2  membrane glycoprotein|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P97484|reviewed|Leukocyte  immunoglobulin-like receptor subfamily B member 3|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q63111|reviewed|Carcinoembryonic  antigen-related cell adhesion molecule 3|taxID:10116|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   50.8   0.8   1.8e-15   3.7e-15       3      79 ..     628     699 ..     626     700 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 50.8 bits;  conditional E-value: 1.8e-15
+                         msa_train   3 vtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaGtYtCvvnnpggsatl 79 
+                                         v++ +s++LtC +   ++g++++W ++++ + ++++   +  ++t  +l i++v++edaG+Y+C+v+np +s+t+
+  Q63111|reviewed|Carcinoembryonic 628 SSVRVKSSVVLTCLSA--DTGTSIQWLFNNQNLRLTQR---MSLSQTKCQLSIDPVRREDAGEYRCEVSNPVSSKTS 699
+                                       679999**********..********************...9*******************************9985 PP
+
+>> P05622|reviewed|Platelet-derived  growth factor receptor beta|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q05030|reviewed|Platelet-derived  growth factor receptor beta|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q14954|reviewed|Killer  cell immunoglobulin-like receptor 2DS1|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P43626|reviewed|Killer  cell immunoglobulin-like receptor 2DL1|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9I8X3|reviewed|Fibroblast  growth factor receptor 3|taxID:7955|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P43631|reviewed|Killer  cell immunoglobulin-like receptor 2DS2|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> B4N072|reviewed|Interference  hedgehog|taxID:7260|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P43628|reviewed|Killer  cell immunoglobulin-like receptor 2DL3|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q61851|reviewed|Fibroblast  growth factor receptor 3|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P83556|reviewed|Killer  cell immunoglobulin-like receptor 3DL1|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O57261|reviewed|Interleukin-1-binding  protein|taxID:126794|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   57.2   0.0   1.8e-17   3.8e-17       3      78 ..     230     319 ..     228     322 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 57.2 bits;  conditional E-value: 1.8e-17
+                              msa_train   3 vtvleGesatLtCsas..egspgpdvtWskegktkieslk............vkedngrttqssllisnvte 60 
+                                            v++++G+++t+ C++s  + ++++dv+W+ +g++ +e +             +++d++r+ +s l+i++v+e
+  O57261|reviewed|Interleukin-1-binding 230 VVTSIGSNLTIACRVSlrPPTTDADVFWISNGMYYEEDDGdgdgrisvankiYMTDKRRVITSRLNINPVKE 301
+                                            78899******************************************************************* PP
+
+                              msa_train  61 edaGtYtCvvnnpggsat 78 
+                                            eda+t+tC++ + ++ + 
+  O57261|reviewed|Interleukin-1-binding 302 EDATTFTCMAFTIPSISK 319
+                                            ***********9998766 PP
+
+>> P25212|reviewed|Interleukin-1-binding  protein|taxID:10254|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   56.7   0.0   2.6e-17   5.5e-17       3      78 ..     230     319 ..     228     322 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 56.7 bits;  conditional E-value: 2.6e-17
+                              msa_train   3 vtvleGesatLtCsas..egspgpdvtWskegktkieslk............vkedngrttqssllisnvte 60 
+                                            +++++G+++t+ C++s  + ++++dv+W+ +g++ +e +             +++d++r+ +s l+i++v+e
+  P25212|reviewed|Interleukin-1-binding 230 IVTSIGSNLTIACRVSlrPPTTDADVFWISNGMYYEEDDGdgngrisvankiYMTDKRRVITSRLNINPVKE 301
+                                            57899******************************************************************* PP
+
+                              msa_train  61 edaGtYtCvvnnpggsat 78 
+                                            eda+t+tC++ + ++ + 
+  P25212|reviewed|Interleukin-1-binding 302 EDATTFTCMAFTIPSISK 319
+                                            ***********9998766 PP
+
+>> P43632|reviewed|Killer  cell immunoglobulin-like receptor 2DS4|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8N109|reviewed|Killer  cell immunoglobulin-like receptor 2DL5A|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P0DOX3|reviewed|Immunoglobulin  delta heavy chain|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8N149|reviewed|Leukocyte  immunoglobulin-like receptor subfamily A member 2|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q04523|reviewed|Interleukin-1-binding  protein|taxID:265872|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   56.3   0.0   3.5e-17   7.3e-17       3      78 ..     230     319 ..     228     322 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 56.3 bits;  conditional E-value: 3.5e-17
+                              msa_train   3 vtvleGesatLtCsas..egspgpdvtWskegktkieslk............vkedngrttqssllisnvte 60 
+                                            v++++G+++t+ C++s  + ++++dv+W+ +g++ +e ++            +++d++r+ +s l i++v+e
+  Q04523|reviewed|Interleukin-1-binding 230 VVTSIGSNLTIACRVSlrPPTTDADVFWISNGMYYEEDDEdgdgrisvankiYTTDKRRVITSRLKINPVKE 301
+                                            78899******************************************************************* PP
+
+                              msa_train  61 edaGtYtCvvnnpggsat 78 
+                                            eda+t+tC++ + ++ + 
+  Q04523|reviewed|Interleukin-1-binding 302 EDATTFTCMAFTIPSISK 319
+                                            ***********9998766 PP
+
+>> P59901|reviewed|Leukocyte  immunoglobulin-like receptor subfamily A member 4|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8NHK3|reviewed|Killer  cell immunoglobulin-like receptor 2DL5B|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q06806|reviewed|Tyrosine-protein  kinase receptor Tie-1|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P13369|reviewed|Macrophage  colony-stimulating factor 1 receptor|taxID:9685|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   58.9   0.1   5.5e-18   1.1e-17       3      81 .]     212     291 ..     210     291 .. 0.96
+
+  Alignments for each domain:
+  == domain 1  score: 58.9 bits;  conditional E-value: 5.5e-18
+                   msa_train   3 vtvleGesatLtCsasegspgpdvtWskegktkieslk.vkedngrttqssllisnvteedaGtYtCvvnnpggsatlst 81 
+                                 ++  +Ge a++ Csas+ ++++dv+++++++ ++ s++  ++dn+++ + +l++++v+++daG+Y+C+++n++g++++s+
+  P13369|reviewed|Macrophage 212 LVRIQGEAAQIVCSASNIDVNFDVSLRHGDTKLTISQQsDFHDNRYQKVLTLNLDHVSFQDAGNYSCTATNAWGNHSASM 291
+                                 56789***********************************************************************9986 PP
+
+>> P43627|reviewed|Killer  cell immunoglobulin-like receptor 2DL2|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P27930|reviewed|Interleukin-1  receptor type 2|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P52179|reviewed|Myomesin-1|taxID:9606|NF  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q14952|reviewed|Killer  cell immunoglobulin-like receptor 2DS3|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q29JX6|reviewed|Interference  hedgehog|taxID:46245|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P00545|reviewed|Tyrosine-protein  kinase transforming protein fms|taxID:11778|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   58.9   0.1   5.4e-18   1.1e-17       3      81 .]     246     325 ..     244     325 .. 0.96
+
+  Alignments for each domain:
+  == domain 1  score: 58.9 bits;  conditional E-value: 5.4e-18
+                         msa_train   3 vtvleGesatLtCsasegspgpdvtWskegktkieslk.vkedngrttqssllisnvteedaGtYtCvvnnpggsat 78 
+                                       ++  +Ge a++ Csas+ ++++dv+++++++ ++ s++  ++dn+++ + +l++++v+++daG+Y+C+++n++g+++
+  P00545|reviewed|Tyrosine-protein 246 LVRIQGEAAQIVCSASNIDVNFDVSLRHGDTKLTISQQsDFHDNRYQKVLTLNLDHVSFQDAGNYSCTATNAWGNHS 322
+                                       56789***********************************************************************9 PP
+
+                         msa_train  79 lst 81 
+                                       +s+
+  P00545|reviewed|Tyrosine-protein 323 ASM 325
+                                       986 PP
+
+>> Q09147|reviewed|Fibroblast  growth factor receptor homolog 2|taxID:7227|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q00495|reviewed|Macrophage  colony-stimulating factor 1 receptor|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P01880|reviewed|Immunoglobulin  heavy constant delta|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q6QNF3|reviewed|Platelet-derived  growth factor receptor beta|taxID:9615|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P09581|reviewed|Macrophage  colony-stimulating factor 1 receptor|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P01875|reviewed|Ig  mu chain C region|taxID:9031|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   51.6   0.0   1.1e-15   2.2e-15       3      77 ..     225     305 ..     223     309 .. 0.94
+
+  Alignments for each domain:
+  == domain 1  score: 51.6 bits;  conditional E-value: 1.1e-15
+           msa_train   3 vtvleGesatLtCsas..egspgpdvtWskegktkieslk...vkedngrttqssllisnvteedaG.tYtCvvnnpggsa 77 
+                         v++ +++satLtC++s   + +g +v+W+ke++ k e++    v ++ng  t+  + +++++e+d+G  Y C+vn+p+   
+  P01875|reviewed|Ig 225 VDIFISKSATLTCRVSnmVNADGLEVSWWKEKGGKLETALgkrVLQSNGLYTVDGVATVCASEWDGGdGYVCKVNHPDLLF 305
+                         5677899**********************************************************************9765 PP
+
+>> Q96PJ5|reviewed|Fc  receptor-like protein 4|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P07333|reviewed|Macrophage  colony-stimulating factor 1 receptor|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9H7L2|reviewed|Putative  killer cell immunoglobulin-like receptor-like protein KIR3DX1|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P03988|reviewed|Ig  mu chain C region secreted form|taxID:9986|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P04221|reviewed|Ig  mu chain C region membrane-bound form|taxID:9986|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q3UKK2|reviewed|Carcinoembryonic  antigen-related cell adhesion molecule 5|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P83555|reviewed|Killer  cell immunoglobulin-like receptor 3DL1|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P21975|reviewed|Putative  Ig-like V-type domain-containing protein FPV055|taxID:928301|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   59.4   0.0   3.8e-18   7.9e-18       2      78 ..      35     116 ..      34     119 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 59.4 bits;  conditional E-value: 3.8e-18
+                 msa_train   2 tvtvleGesatLtCsas....egspgpdvtWskegktkieslk.vkedngrttqssllisnvteedaGtYtCvvnnpggsat 78 
+                                v+v+eG+ ++LtC+++     g++ ++v W++++++ +++ k +++++++++q++l+is+v++e +G Y+Cvv+  g+ + 
+  P21975|reviewed|Putative  35 YVLVPEGSDINLTCFIKddqgAGEDKVIVAWQQGDGEVTQGIKtTWDTTRQVGQTMLHISKVSKEAEGSYMCVVWINGDADY 116
+                               689***********************************************************************99887665 PP
+
+>> B4KJW1|reviewed|Interference  hedgehog|taxID:7230|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> B4KJW1|reviewed|Interference  hedgehog|taxID:7230|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9N3X8|reviewed|Protein  sidekick homolog|taxID:6239|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P41217|reviewed|OX-2  membrane glycoprotein|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q6PI73|reviewed|Leukocyte  immunoglobulin-like receptor subfamily A member 6|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8N423|reviewed|Leukocyte  immunoglobulin-like receptor subfamily B member 2|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P0DOX2|reviewed|Immunoglobulin  alpha-2 heavy chain|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q28173|reviewed|Advanced  glycosylation end product-specific receptor|taxID:9913|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q29612|reviewed|Interleukin-1  receptor type 2|taxID:9534|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O75022|reviewed|Leukocyte  immunoglobulin-like receptor subfamily B member 3|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8NHL6|reviewed|Leukocyte  immunoglobulin-like receptor subfamily B member 1|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> F1NWE3|reviewed|Receptor-type  tyrosine-protein phosphatase S|taxID:9031|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P26151|reviewed|High  affinity immunoglobulin gamma Fc receptor I|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q62151|reviewed|Advanced  glycosylation end product-specific receptor|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q5IS37|reviewed|NT-3  growth factor receptor|taxID:9598|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   60.9   0.8   1.3e-18   2.7e-18       2      80 ..     218     296 ..     217     297 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 60.9 bits;  conditional E-value: 1.3e-18
+             msa_train   2 tvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaG.tYtCvvnnpggsatls 80 
+                           ++tv+eG++a++tC+ s gsp pdv W+++g ++i++++++ ++++++  +l+++nvt ed G t tC ++n  g +++s
+  Q5IS37|reviewed|NT-3 218 NLTVREGDNAVITCNGS-GSPLPDVDWIVTGLQSINTHQTNLNWTNVHAINLTLVNVTSEDNGfTLTCIAENVVGMSNAS 296
+                           789**************.*********************************************************99987 PP
+
+>> Q16288|reviewed|NT-3  growth factor receptor|taxID:9606|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   60.8   0.8   1.3e-18   2.8e-18       2      80 ..     218     296 ..     217     297 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 60.8 bits;  conditional E-value: 1.3e-18
+             msa_train   2 tvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaG.tYtCvvnnpggsatls 80 
+                           ++tv+eG++a++tC+ s gsp pdv W+++g ++i++++++ ++++++  +l+++nvt ed G t tC ++n  g +++s
+  Q16288|reviewed|NT-3 218 NLTVREGDNAVITCNGS-GSPLPDVDWIVTGLQSINTHQTNLNWTNVHAINLTLVNVTSEDNGfTLTCIAENVVGMSNAS 296
+                           789**************.*********************************************************99987 PP
+
+>> Q5IFJ9|reviewed|NT-3  growth factor receptor|taxID:9541|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   60.9   0.8   1.3e-18   2.7e-18       2      80 ..     218     296 ..     217     297 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 60.9 bits;  conditional E-value: 1.3e-18
+             msa_train   2 tvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaG.tYtCvvnnpggsatls 80 
+                           ++tv+eG++a++tC+ s gsp pdv W+++g ++i++++++ ++++++  +l+++nvt ed G t tC ++n  g +++s
+  Q5IFJ9|reviewed|NT-3 218 NLTVREGDNAVITCNGS-GSPLPDVDWIVTGLQSINTHQTNLNWTNVHAINLTLVNVTSEDNGfTLTCIAENVVGMSNAS 296
+                           789**************.*********************************************************99987 PP
+
+>> P27931|reviewed|Interleukin-1  receptor type 2|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q5IS82|reviewed|NT-3  growth factor receptor|taxID:39432|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   61.6   0.8   7.7e-19   1.6e-18       2      80 ..     218     296 ..     217     297 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 61.6 bits;  conditional E-value: 7.7e-19
+             msa_train   2 tvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaG.tYtCvvnnpggsatls 80 
+                           ++tv+eG+sa++tC+ s gsp pdv W+++g ++i++++++ ++++++  +l+++nvt ed G t tC ++n  g +++s
+  Q5IS82|reviewed|NT-3 218 NLTVREGDSAVITCNGS-GSPLPDVDWIVTGLQSINTHQTNLNWTNVHAINLTLVNVTSEDNGfTLTCIAENVVGMSNAS 296
+                           789**************.*********************************************************99987 PP
+
+>> Q06805|reviewed|Tyrosine-protein  kinase receptor Tie-1|taxID:9913|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P35590|reviewed|Tyrosine-protein  kinase receptor Tie-1|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P35590|reviewed|Tyrosine-protein  kinase receptor Tie-1|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q91044|reviewed|NT-3  growth factor receptor|taxID:9031|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   52.9   0.6   4.1e-16   8.5e-16       2      80 ..     218     296 ..     217     297 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 52.9 bits;  conditional E-value: 4.1e-16
+             msa_train   2 tvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaG.tYtCvvnnpggsatls 80 
+                           ++tv+eGe+a++tC+ s gsp pdv W +++  +i++++++ ++++++  +l+++nvt ed G   tC ++n  g +++s
+  Q91044|reviewed|NT-3 218 NLTVREGENAVITCNGS-GSPLPDVDWTVADLHSINTHQTNLNWTNVHAINLTLVNVTSEDNGfLLTCIAENVVGMSNAS 296
+                           789**************.*********************************************999*********99987 PP
+
+>> Q9XS78|reviewed|T-cell  surface glycoprotein CD4|taxID:9749|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P10721|reviewed|Mast/stem  cell growth factor receptor Kit|taxID:9606|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   59.5   1.8   3.4e-18     7e-18       2      80 ..     220     302 ..     219     303 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 59.5 bits;  conditional E-value: 3.4e-18
+                  msa_train   2 tvtvleGesatLtCsasegspgpdvtWskegktkieslk....vkedngrttqssllisnvteedaGtYtCvvnnpggsatls 80 
+                                +++++eGe +t tC++++ s+ +  tW++e+++ ++++k    ++ d+++++q++l+is+++ +d+G ++C++nn+ gsa+++
+  P10721|reviewed|Mast/stem 220 SYLLREGEEFTVTCTIKDVSSSVYSTWKRENSQTKLQEKynswHHGDFNYERQATLTISSARVNDSGVFMCYANNTFGSANVT 302
+                                6899***************************************************************************9986 PP
+
+>> Q6UXZ0|reviewed|Transmembrane  and immunoglobulin domain-containing protein 1|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O75023|reviewed|Leukocyte  immunoglobulin-like receptor subfamily B member 5|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P06332|reviewed|T-cell  surface glycoprotein CD4|taxID:10090|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   52.8   0.0   4.4e-16   9.1e-16       3      79 ..      30     123 ..      28     125 .. 0.95
+
+  Alignments for each domain:
+  == domain 1  score: 52.8 bits;  conditional E-value: 4.4e-16
+               msa_train   3 vtvleGesatLtCsasegspgpdvtWskegktkieslk..................vkedngrttqssllisnvteedaGtYtCvvn 71 
+                             v+ +eGesa+L C++s + + + +tW++ +++ki++++                   k++ + ++++ l i++ ++ed+ tY+C+++
+  P06332|reviewed|T-cell  30 VLGKEGESAELPCESS-QKKITVFTWKFSDQRKILGQHgkgvlirggspsqfdrfdSKKGAWEKGSFPLIINKLKMEDSQTYICELE 115
+                             7889************.********************************************************************** PP
+
+               msa_train  72 npggsatl 79 
+                             n+  +++l
+  P06332|reviewed|T-cell 116 NRKEEVEL 123
+                             *9987766 PP
+
+>> B0V2N1|reviewed|Receptor-type  tyrosine-protein phosphatase S|taxID:10090|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q03351|reviewed|NT-3  growth factor receptor|taxID:10116|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   60.8   0.8   1.4e-18   2.9e-18       2      80 ..     218     296 ..     217     297 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 60.8 bits;  conditional E-value: 1.4e-18
+             msa_train   2 tvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaG.tYtCvvnnpggsatls 80 
+                           ++tv+eG++a++tC+ s gsp pdv W+++g ++i++++++ ++++++  +l+++nvt ed G t tC ++n  g +++s
+  Q03351|reviewed|NT-3 218 NLTVREGDNAVITCNGS-GSPLPDVDWIVTGLQSINTHQTNLNWTNVHAINLTLVNVTSEDNGfTLTCIAENVVGMSNAS 296
+                           789**************.*********************************************************99987 PP
+
+>> Q6VNS1|reviewed|NT-3  growth factor receptor|taxID:10090|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   60.9   0.8   1.3e-18   2.7e-18       2      80 ..     218     296 ..     217     297 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 60.9 bits;  conditional E-value: 1.3e-18
+             msa_train   2 tvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaG.tYtCvvnnpggsatls 80 
+                           ++tv+eG++a++tC+ s gsp pdv W+++g ++i++++++ ++++++  +l+++nvt ed G t tC ++n  g +++s
+  Q6VNS1|reviewed|NT-3 218 NLTVREGDNAVITCNGS-GSPLPDVDWIVTGLQSINTHQTNLNWTNVHAINLTLVNVTSEDNGfTLTCIAENVVGMSNAS 296
+                           789**************.*********************************************************99987 PP
+
+>> P24786|reviewed|NT-3  growth factor receptor|taxID:9823|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   57.8   1.0   1.2e-17   2.6e-17       2      80 ..     218     296 ..     217     297 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 57.8 bits;  conditional E-value: 1.2e-17
+             msa_train   2 tvtvleGesatLtCsasegspgpdvtWskegktkieslkvkedngrttqssllisnvteedaG.tYtCvvnnpggsatls 80 
+                           ++tv+eG++a+ tC+ s gsp pdv W+++g ++i++++++ ++++++  +l+++nvt ed G t tC ++n  g +++s
+  P24786|reviewed|NT-3 218 NLTVREGDNAVVTCNGS-GSPLPDVDWIVTGLQSINTHQTNLNWTNVHAINLTLVNVTSEDNGfTLTCIAENVVGMSNAS 296
+                           789**************.*********************************************************99987 PP
+
+>> P12314|reviewed|High  affinity immunoglobulin gamma Fc receptor I|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P01855|reviewed|Immunoglobulin  heavy constant epsilon|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P43303|reviewed|Interleukin-1  receptor type 2|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P01877|reviewed|Immunoglobulin  heavy constant alpha 2|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q5RAL8|reviewed|OX-2  membrane glycoprotein|taxID:9601|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P20758|reviewed|Ig  alpha-1 chain C region|taxID:9595|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P16004|reviewed|T-cell  surface glycoprotein CD4|taxID:9598|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P06336|reviewed|Immunoglobulin  heavy constant epsilon|taxID:10090|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   52.7   0.1   4.7e-16   9.8e-16       2      79 ..     213     296 ..     212     298 .. 0.96
+
+  Alignments for each domain:
+  == domain 1  score: 52.7 bits;  conditional E-value: 4.7e-16
+                       msa_train   2 tvtvleGesatLtCsas..egspgpdvtWskegktkieslk...vkedngrttqssllisnvteedaG.tYtCvvnnpg 74 
+                                     ++++++ + + LtC ++  e++++++vtW +e+kt+ + ++   ++++n++t+++s+l + ++ + +G  Y C v++p+
+  P06336|reviewed|Immunoglobulin 213 PLDLYQNGAPKLTCLVVdlESEKNVNVTWNQEKKTSVSASQwytKHHNNATTSITSILPVVAKDWIEGyGYQCIVDHPD 291
+                                     57899999*********************************************************************** PP
+
+                       msa_train  75 gsatl 79 
+                                     +++++
+  P06336|reviewed|Immunoglobulin 292 FPKPI 296
+                                     *9876 PP
+
+>> P01730|reviewed|T-cell  surface glycoprotein CD4|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q76II0|reviewed|Mast/stem  cell growth factor receptor Kit|taxID:9483|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   55.9   1.4   4.8e-17     1e-16       2      80 ..     220     302 ..     219     303 .. 0.97
+
+  Alignments for each domain:
+  == domain 1  score: 55.9 bits;  conditional E-value: 4.8e-17
+                  msa_train   2 tvtvleGesatLtCsasegspgpdvtWskegktkieslk....vkedngrttqssllisnvteedaGtYtCvvnnpggsatls 80 
+                                +++++eGe +t tC++++ s+ +  +W+ke++  ++++k    ++ d+++++q++l+is+v+ +d+G ++C+++n+ gsa+++
+  Q76II0|reviewed|Mast/stem 220 SYLLREGEEFTVTCTIKDVSSSVYSSWKKENSPTKLQEKynswHQGDFNYERQATLTISSVRVNDSGVFMCYASNTFGSANVT 302
+                                6899***************************************************************************9986 PP
+
+>> Q8MJZ7|reviewed|Leukocyte  immunoglobulin-like receptor subfamily B member 5|taxID:9598|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P01876|reviewed|Immunoglobulin  heavy constant alpha 1|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9JKA5|reviewed|Cell  surface A33 antigen|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q5BK54|reviewed|Lymphocyte  activation gene 3 protein|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8AXC7|reviewed|Platelet-derived  growth factor receptor alpha|taxID:31033|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> A2A8L5|reviewed|Receptor-type  tyrosine-protein phosphatase F|taxID:10090|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q18806|reviewed|Neuronal  immunoglobulin domain-containing protein rig-3|taxID:6239|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P23468|reviewed|Receptor-type  tyrosine-protein phosphatase delta|taxID:9606|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q22125|reviewed|Zwei  Ig domain protein zig-6|taxID:6239|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P16003|reviewed|T-cell  surface glycoprotein CD4|taxID:9544|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q7YQL9|reviewed|Interleukin-1  receptor accessory protein-like 1|taxID:9600|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P60029|reviewed|Interleukin-1  receptor accessory protein-like 1|taxID:9598|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9NZN1|reviewed|Interleukin-1  receptor accessory protein-like 1|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q08340|reviewed|T-cell  surface glycoprotein CD4|taxID:9545|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P79184|reviewed|T-cell  surface glycoprotein CD4|taxID:9543|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P79185|reviewed|T-cell  surface glycoprotein CD4|taxID:9541|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q08336|reviewed|T-cell  surface glycoprotein CD4|taxID:9531|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q3SWT0|reviewed|Platelet  endothelial cell adhesion molecule|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q8C310|reviewed|Roundabout  homolog 4|taxID:10090|NF
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9NYZ4|reviewed|Sialic  acid-binding Ig-like lectin 8|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q08338|reviewed|T-cell  surface glycoprotein CD4|taxID:9534|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P59824|reviewed|Interleukin-1  receptor accessory protein-like 1|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P59823|reviewed|Interleukin-1  receptor accessory protein-like 1|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P43481|reviewed|Mast/stem  cell growth factor receptor Kit|taxID:9913|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P05540|reviewed|T-cell  surface glycoprotein CD4|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q08156|reviewed|Mast/stem  cell growth factor receptor Kit|taxID:9031|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P28827|reviewed|Receptor-type  tyrosine-protein phosphatase mu|taxID:9606|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   51.8   0.0     9e-16   1.9e-15       1      77 [.     192     269 ..     192     273 .. 0.96
+
+  Alignments for each domain:
+  == domain 1  score: 51.8 bits;  conditional E-value: 9e-16
+                      msa_train   1 ptvtvleGesatLtCsasegspgpdvtWskegktkieslk.vkedngrttqssllisnvteedaGtYtCvvnnpggsa 77 
+                                    ++v+v++G+ at++Csa   +++ d  W ++ ++ + +lk +k +  r++++s++++n+t++daG Y+C+ +++gg+ 
+  P28827|reviewed|Receptor-type 192 QNVEVNAGQFATFQCSAIGRTVAGDRLWLQGIDVRDAPLKeIKVTSSRRFIASFNVVNTTKRDAGKYRCMIRTEGGVG 269
+                                    589***********************************************************************9976 PP
+
+>> Q2KJF1|reviewed|Alpha-1B-glycoprotein|taxID:9913|P  
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q08339|reviewed|T-cell  surface glycoprotein CD4|taxID:9538|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> O43699|reviewed|Sialic  acid-binding Ig-like lectin 6|taxID:9606|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P14719|reviewed|Interleukin-1  receptor-like 1|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P05532|reviewed|Mast/stem  cell growth factor receptor Kit|taxID:10090|P
+   #    score  bias  c-Evalue  i-Evalue hmmfrom  hmm to    alifrom  ali to    envfrom  env to     acc
+ ---   ------ ----- --------- --------- ------- -------    ------- -------    ------- -------    ----
+   1 !   51.8   1.0   8.7e-16   1.8e-15       2      80 ..     221     305 ..     220     306 .. 0.96
+
+  Alignments for each domain:
+  == domain 1  score: 51.8 bits;  conditional E-value: 8.7e-16
+                  msa_train   2 tvtvleGesatLtCsasegspgpdvtWskegktkieslk......vkedngrttqssllisnvteedaGtYtCvvnnpggsatl 79 
+                                ++++++G+++t  C++++ s+ ++ +W k++ ++++ ++      ++ d+++++q++l+is+++ +d+G ++C++nn+ gsa++
+  P05532|reviewed|Mast/stem 221 SHLLKKGDTFTVVCTIKDVSTSVNSMWLKMNPQPQHIAQvkhnswHRGDFNYERQETLTISSARVDDSGVFMCYANNTFGSANV 304
+                                799******************************************************************************998 PP
+
+                  msa_train  80 s 80 
+                                +
+  P05532|reviewed|Mast/stem 305 T 305
+                                6 PP
+
+>> G5ED00|reviewed|Zwei  Ig domain protein zig-8|taxID:6239|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q9Z0H5|reviewed|Natural  cytotoxicity triggering receptor 1|taxID:10116|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q28317|reviewed|Mast/stem  cell growth factor receptor Kit|taxID:9925|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> Q00342|reviewed|Receptor-type  tyrosine-protein kinase FLT3|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> A0A7H0DNG2|reviewed|Soluble  interferon alpha/beta receptor OPG204|taxID:10244|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+>> P28828|reviewed|Receptor-type  tyrosine-protein phosphatase mu|taxID:10090|P
+   [No individual domains that satisfy reporting thresholds (although complete target did)]
+
+
+
+Internal pipeline statistics summary:
+-------------------------------------
+Query model(s):                            1  (81 nodes)
+Target sequences:                        442  (430602 residues searched)
+Passed MSV filter:                       279  (0.631222); expected 8.8 (0.02)
+Passed bias filter:                      278  (0.628959); expected 8.8 (0.02)
+Passed Vit filter:                       275  (0.622172); expected 0.4 (0.001)
+Passed Fwd filter:                       274  (0.61991); expected 0.0 (1e-05)
+Initial search space (Z):                442  [actual number of targets]
+Domain search space  (domZ):             213  [number of targets reported over threshold]
+# CPU time: 0.22u 0.00s 00:00:00.22 Elapsed: 00:00:00.22
+# Mc/sec: 154.47
+//
+[ok]
