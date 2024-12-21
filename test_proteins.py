@@ -42,10 +42,10 @@ def main():
     sequences = read_fasta(args.f)
 
     output_file = "results.csv"
-    if os.path.exists(output_file):
+    if not os.path.exists(output_file):
         with open(output_file, "w", newline="") as file:
             writer = csv.writer(file)
-            writer.writerow(["header", "sequence", "log", "result", "stats"])
+            writer.writerow(["header", "sequence", "log", "result", "expected", "match"])
 
     # stats: (e_p = 0 or 1, match: 1)
 
@@ -53,11 +53,19 @@ def main():
         try:
             print(header)
             print(seq)
-            stats = [0,0]
+
+            if len(seq) > 800:
+                with open(output_file, "a", newline="") as file:  # Append to the file
+                    writer = csv.writer(file)
+                    writer.writerow([header, seq, None, None, expected_output, "too long", "too long"])
+                continue
+
+            expected_output = 0
+            match = None
 
             expected = (header.strip())[-1]
             if expected == "P":
-                stats[0] = 1
+                expected_output = 1
             
             score = classify_protein.score_sequence(seq, transition_probs, m_emission_probs, i_emission_probs, max_length)
             print(f"Log-probability of query sequence: {score}")
@@ -68,19 +76,19 @@ def main():
             if score > threshold: 
                 print(f"The queried protein sequence is likely a member of the IgSF family.")
                 if expected == "P":
-                    stats[1] = 1
+                    match = 1
                 elif expected == "N":
-                    stats[1] = 0
+                    match = 0
             else:
                 print(f"The queried protein sequence is unlikely to be a member of the IgSF family.")
                 if expected == "P":
-                    stats[1] = 0
+                    match = 0
                 elif expected == "N":
-                    stats[1] = 1
+                    match = 1
             
             with open(output_file, "a", newline="") as file:  # Append to the file
                 writer = csv.writer(file)
-                writer.writerow([header, seq, score, score > threshold, stats])
+                writer.writerow([header, seq, score, score > threshold, expected_output, match])
         except Exception as e:
             print(f"Error processing {header}: {e}")
             writer.writerow([header, seq, score, score > threshold, "ERROR"])
