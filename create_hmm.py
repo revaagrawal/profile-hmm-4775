@@ -58,7 +58,6 @@ def get_state(base):
 
 def get_transition_probabilities(sequences, insertions, deletions, max_length, sigma):
     num = (max_length * 3) + 3
-    print(num)
     table = np.zeros((num, num))
 
     # add pseudocounts
@@ -132,10 +131,6 @@ def get_transition_probabilities(sequences, insertions, deletions, max_length, s
                     elif cur_state == "D":
                         end_index += 2
     
-                # print(seq, start_index, end_index, i)
-                # print(seq[:i])
-                # print(prev_state, cur_state)
-                # print(start)
                 table[start_index][end_index] += 1
 
             start += 1
@@ -177,10 +172,9 @@ def get_emission_probabilities(sequences, insertions, deletions, max_length):
         "V": 19,
     }
     
-    m_emissions = np.ones((max_length+1,20))
-    print(m_emissions)
+    m_emissions = np.full((max_length+1,20), 0.1)
     m_emissions[0] = 0
-    i_emissions = np.ones((max_length+1,20))
+    i_emissions = np.full((max_length+1,20), 0.1)
 
     for seq in sequences:
         state = 0
@@ -207,6 +201,8 @@ def get_emission_probabilities(sequences, insertions, deletions, max_length):
         
     print("m_emission", m_emissions)
     print("i_emission", i_emissions)
+    # for row in i_emissions:
+    #     print(row)
     return m_emissions, i_emissions 
     
 def create_hmm():
@@ -260,8 +256,6 @@ def build_profile(fasta_file, sigma):
             insertions.add(k)
         else:
             deletions.add(k)
-    print(insertions)
-    print(deletions)
 
     # TODO: already removed for "seed"? (lecture notes)
     # removed_cols = remove_columns(insertion_cols, 0.1, total)
@@ -282,11 +276,14 @@ def build_profile(fasta_file, sigma):
     states = ['S, I'] + [f'I{i}, M{i}, D{i}' for i in range(max_length)] + ['End']
     # print(", ".join(states))
     # print(f'{transition_probs}\n')
-    for row in transition_probs:
-        print(f"{row[0]:.5f}", f"{row[1]:.5f}", f"{row[2]:.5f}", f"{row[3]:.5f}", f"{row[4]:.5f}", f"{row[5]:.5f}", f"{row[6]:.5f}", f"{row[7]:.5f}")
+    # for row in transition_probs:
+    #     print(f"{row[0]:.5f}", f"{row[1]:.5f}", f"{row[2]:.5f}", f"{row[3]:.5f}", f"{row[4]:.5f}", f"{row[5]:.5f}", f"{row[6]:.5f}", f"{row[7]:.5f}")
 
     m_emissions, i_emissions = get_emission_probabilities(sequences, insertions, deletions, max_length)
     row_sums = m_emissions.sum(axis=1, keepdims=True)
+    for row in row_sums:
+        if row[0] == 0:
+            row[0] = 1
     m_emission_probs = m_emissions / row_sums
 
     row_sums = i_emissions.sum(axis=1, keepdims=True)
