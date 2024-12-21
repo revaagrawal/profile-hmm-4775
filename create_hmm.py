@@ -224,6 +224,9 @@ def normalize_matrix(matrix):
         row_sums[-1] = 1
 
     norm_probs = matrix / row_sums
+    
+    # NOTE: when checking comment out the following to see it in non log
+    # norm_probs = np.log(norm_probs)
     return norm_probs
 
 def build_profile(fasta_file, sigma):
@@ -308,7 +311,7 @@ def build_profile(fasta_file, sigma):
 
 def main():
     parser = argparse.ArgumentParser(description='Build Profile HMM')
-    parser.add_argument('-f', action="store", dest="f", type=str, default='sample.fasta')
+    parser.add_argument('-f', action="store", dest="f", type=str, default='test/sample.fasta')
     parser.add_argument("-sigma", default=0.01, type=float, help="Pseudocount value")
 
     args = parser.parse_args()
