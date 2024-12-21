@@ -2,6 +2,22 @@ import argparse
 import numpy as np
 import pickle
 
+"""
+run this through by the command:
+python create_hmm.py -f test/msa.fasta -sigma 0.01
+the arg -f is the training sequence (confirmed sequences in the igF family)
+the arg -sigma is the pseudocount
+
+will produce a 'package' containing the transition prob matrix, the match emission proabbilties, 
+and the insertion emission probabiltiies 
+for the transition probabilities: 
+    matrix[row][col] where row is the previous state and col is the next state 
+    and indexing is S, I_0, M_1, D_1, I_1, M_2, D_2, I_2 and last row is all 0s (cannot have any outgoing bc that is lasxt)
+emission probabilities:
+    m_emissions first column 0 because there is no M_0
+        - i_emissions has extra col (0th column) for I_0
+"""
+
 def read_fasta(filename):
     with open(filename, "r") as f:
         output = []
@@ -14,47 +30,6 @@ def read_fasta(filename):
             else: s += l.strip()
         output.append(s)
         return output
-    
-def get_insertion_columns(sequences):
-    insertions = dict()
-    for s in sequences:
-        for i in range(len(s)):
-            if s[i] == ".":
-                if i in insertions:
-                    insertions[i] += 1
-                else:
-                    insertions[i] = 1
-
-    return insertions
-
-def get_deletion_columns(sequences):
-    deletions = dict()
-    for s in sequences:
-        for i in range(len(s)):
-            if s[i] == "-":
-                if i in deletions:
-                    deletions[i] += 1
-                else:
-                    deletions[i] = 1
-
-    return deletions
-
-def remove_columns(cols, theta, total):
-    col_keys = list(cols.keys())
-    for col in col_keys:
-        if cols[col] / total < theta:
-            del cols[col]
-    return cols
-
-def get_state(base):
-    state = None
-    if base == "-":
-        state = "D"
-    else:
-        state = "M"
-    
-    return state
-
 
 def get_transition_probabilities(sequences, insertions, deletions, max_length, sigma):
     num = (max_length * 3) + 3
@@ -77,23 +52,25 @@ def get_transition_probabilities(sequences, insertions, deletions, max_length, s
     table[1][3] += sigma # I -> D0
     table[1][1] += sigma # I -> I
 
-
     for seq in sequences:
         prev_state = None
-        start = 0
+        state_num = 0
+        print("new")
         for i in range(len(seq)):
             # find current state
             cur_state = None
             if i in deletions and seq[i] == ".":
                 cur_state = "D"
+                state_num += 1
             elif i in insertions and seq[i] != ".":
                 cur_state = "I"
             elif seq[i] == ".":
                 continue
             else:
                 cur_state = "M"
+                state_num += 1
 
-            
+            print("state", cur_state)
             # determine transition
             if prev_state is None: # first
                 if cur_state == "I":
@@ -103,41 +80,40 @@ def get_transition_probabilities(sequences, insertions, deletions, max_length, s
                 elif cur_state == "D":
                     table[0][3] += 1
             else:
-                start_index = (3 * (start-1)) + 1
-                end_index = (3 * start) + 1
-            
-                if prev_state == "I":
-                    end_index -= 3
-                    if cur_state == "M":
-                        end_index += 1
-                    elif cur_state == "D":
-                        end_index += 2
-                    elif cur_state == "I":
-                        start -= 1
+                if cur_state == "I":
+                    end_index = (3 * state_num) + 1
+                    if prev_state == "I":
+                        start_index = end_index
+                    elif prev_state == "M":
+                        start_index = end_index - 2
+                    elif prev_state == "D":
+                        start_index = end_index - 1
 
-                elif prev_state == "M":
-                    start_index += 1
-                    if cur_state == "M":
-                        end_index += 1
-                    elif cur_state == "D":
-                        end_index += 2
-                    elif cur_state == "I":
-                        start -= 1
+                elif cur_state == "M":
+                    end_index = (3 * (state_num-1)) + 2
+                    if prev_state == "I":
+                        start_index = end_index - 1
+                    elif prev_state == "M":
+                        start_index = end_index - 3
+                    elif prev_state == "D":
+                        start_index = end_index - 2
 
-                elif prev_state == "D":
-                    start_index += 2
-                    if cur_state == "M":
-                        end_index += 1
-                    elif cur_state == "D":
-                        end_index += 2
-    
+                elif cur_state == "D":
+                    end_index = (3 * (state_num-1)) + 3
+                    if prev_state == "I":
+                        start_index = end_index - 2
+                    elif prev_state == "M":
+                        start_index = end_index - 4
+                    elif prev_state == "D":
+                        start_index = end_index - 3
+
+
                 table[start_index][end_index] += 1
 
-            start += 1
             prev_state = cur_state
 
             if i == len(seq) - 1:
-                start_index = (3 * (start-1)) + 1
+                start_index = (3 * (state_num-1)) + 1
                 if cur_state == "M":
                     start_index += 1
                 elif cur_state == "D":
@@ -177,32 +153,28 @@ def get_emission_probabilities(sequences, insertions, deletions, max_length):
     i_emissions = np.full((max_length+1,20), 0.1)
 
     for seq in sequences:
-        state = 0
+        state_num = 0
         for i in range(len(seq)):
             # find current state
             cur_state = None
             if i in deletions and seq[i] == ".":
                 cur_state = "D"
+                state_num += 1
             elif i in insertions and seq[i] != ".":
                 cur_state = "I"
             elif seq[i] == ".":
                 continue
             else:
                 cur_state = "M"
+                state_num += 1
 
             aa = seq[i]
-            state += 1
             # update emission count
             if cur_state == "I":
-                state -= 1
-                i_emissions[state][amino_acids[aa]] += 1
+                i_emissions[state_num][amino_acids[aa]] += 1
             elif cur_state == "M":
-                m_emissions[state][amino_acids[aa]] += 1
-        
-    print("m_emission", m_emissions)
-    print("i_emission", i_emissions)
-    # for row in i_emissions:
-    #     print(row)
+                m_emissions[state_num][amino_acids[aa]] += 1
+            
     return m_emissions, i_emissions 
     
 def create_hmm():
@@ -256,38 +228,30 @@ def build_profile(fasta_file, sigma):
             insertions.add(k)
         else:
             deletions.add(k)
-
-    # TODO: already removed for "seed"? (lecture notes)
-    # removed_cols = remove_columns(insertion_cols, 0.1, total)
-    # print(removed_cols.keys())
-
-    # filtered_sequences = filter_sequences(sequences, removed_cols)
+    print("insertion", insertions)
+    print("deletions", deletions)
 
     # determines the max number of match states (AKA how many columns in the core motif)
     max_length = len(sequences[0]) - len(insertions)
     transition_matrix = get_transition_probabilities(sequences, insertions, deletions, max_length, sigma)
 
-    # print(f'transition matrix before normalization:')
-    # states = ['S, I'] + [f'I{i}, M{i}, D{i}' for i in range(max_length)] + ['End']
-    # print(", ".join(states))
-    # print(f'{transition_matrix}\n')
-    # transition_probs = transition_matrix / row_sums
     transition_probs = normalize_matrix(transition_matrix)
-    states = ['S, I'] + [f'I{i}, M{i}, D{i}' for i in range(max_length)] + ['End']
-    # print(", ".join(states))
-    # print(f'{transition_probs}\n')
-    # for row in transition_probs:
-    #     print(f"{row[0]:.5f}", f"{row[1]:.5f}", f"{row[2]:.5f}", f"{row[3]:.5f}", f"{row[4]:.5f}", f"{row[5]:.5f}", f"{row[6]:.5f}", f"{row[7]:.5f}")
+    for row in transition_probs:
+        for i in range(len(row)):
+            row[i] = round(row[i], 3)
+        print(row)
 
     m_emissions, i_emissions = get_emission_probabilities(sequences, insertions, deletions, max_length)
     row_sums = m_emissions.sum(axis=1, keepdims=True)
-    for row in row_sums:
-        if row[0] == 0:
-            row[0] = 1
     m_emission_probs = m_emissions / row_sums
+    for i, row in enumerate(m_emission_probs):
+        print(i, row)
 
     row_sums = i_emissions.sum(axis=1, keepdims=True)
     i_emission_probs = i_emissions / row_sums
+    print("space")
+    for i, row in enumerate(i_emission_probs):
+        print(i, row)
 
     '''
     NOTES:
