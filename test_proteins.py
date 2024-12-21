@@ -95,5 +95,50 @@ def main():
                 writer = csv.writer(file)
                 writer.writerow([header, seq, None, None, "ERROR"])
 
+    # try ones > 800
+    final_output_file = "final_results.csv"
+    with open(output_file, "r") as infile, open(final_output_file, "w", newline="") as outfile:
+        reader = csv.reader(infile)
+        writer = csv.writer(outfile)
+        
+        for row in reader:
+            if len(row) > 0 and row[-1] == "too long":
+                print("found too long")
+                header = row[0]
+                seq = row[1]
+
+                expected_output = 0
+                match = None
+
+                expected = (header.strip())[-1]
+                if expected == "P":
+                    expected_output = 1
+
+                try:
+                    score = classify_protein.score_sequence(seq, transition_probs, m_emission_probs, i_emission_probs, max_length)
+                except Exception as e:
+                    print(f"Error processing {header}: {e}")
+                    writer.writerow([header, seq, None, None, "ERROR"])
+                    continue
+
+                threshold = -45
+
+                if score > threshold: 
+                    print(f"The queried protein sequence is likely a member of the IgSF family.")
+                    if expected == "P":
+                        match = 1
+                    elif expected == "N":
+                        match = 0
+                else:
+                    print(f"The queried protein sequence is unlikely to be a member of the IgSF family.")
+                    if expected == "P":
+                        match = 0
+                    elif expected == "N":
+                        match = 1
+
+                writer.writerow([header, seq, score, score > threshold, expected_output, match])
+            else:
+                writer.writerow(row)
+
 if __name__ == "__main__":
     main()
