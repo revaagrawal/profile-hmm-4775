@@ -91,7 +91,9 @@ def main():
                 writer.writerow([header, seq, score, score > threshold, expected_output, match])
         except Exception as e:
             print(f"Error processing {header}: {e}")
-            writer.writerow([header, seq, score, score > threshold, "ERROR"])
+            with open(output_file, "a", newline="") as file:  # Append to the file
+                writer = csv.writer(file)
+                writer.writerow([header, seq, None, None, "ERROR"])
 
 if __name__ == "__main__":
     main()
