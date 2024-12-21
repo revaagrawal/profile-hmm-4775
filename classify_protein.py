@@ -18,21 +18,10 @@ def score_sequence(query, transition_probs, m_emission_probs, i_emission_probs, 
     assuming all the probabilities are in log-scale (similar to hw)
     """
 
-    # TODO: fix that it doesn't work when converted to log-scale
-    # transition_probs = np.log(transition_probs)
-    # m_emission_probs = np.log(m_emission_probs)
-    # i_emission_probs = np.log(i_emission_probs)
-
-    transition_probs = preprocess_probabilities(transition_probs)
-    m_emission_probs = preprocess_probabilities(m_emission_probs)
-    i_emission_probs = preprocess_probabilities(i_emission_probs)
-
     n = len(query)
     final_max_score = float('-inf')
 
-    # for start in range(len(query)):
     for start in range(len(query)):
-        # print("start", start)
         new_query = query[start:start+max_length]
         n = min(len(new_query), max_length)
 
@@ -174,35 +163,7 @@ def score_sequence(query, transition_probs, m_emission_probs, i_emission_probs, 
 
         max_score = max(max_m, max_i, max_d)
         if max_score > final_max_score:
-            # print(start)
             final_max_score = max_score
-
-        # if max_score == max_m:
-        #     cur_state = "M"
-        # elif max_score == max_i:
-        #     cur_state = "I"
-        # elif max_score == max_d:
-        #     cur_state = "D"
-
-        # optimal_sequence = [cur_state]
-        # cur_state_num = max_length
-        # cur_query_index = len(query)
-
-        # while cur_state_num > -1 and cur_query_index > -1:
-        #     prev_state = tb[cur_state][cur_state_num][cur_query_index]
-        #     optimal_sequence.append(prev_state)
-        #     if cur_state == "M":
-        #         cur_state_num -= 1
-        #         cur_query_index -= 1
-        #     elif cur_state == "I":
-        #         cur_query_index -= 1
-        #     elif cur_state == "D":
-        #         cur_state_num -= 1
-            
-        #     cur_state = prev_state
-
-        # optimal_sequence.reverse()
-        # print(optimal_sequence)
 
     return final_max_score
 
