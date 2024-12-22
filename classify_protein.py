@@ -18,79 +18,154 @@ def score_sequence(query, transition_probs, m_emission_probs, i_emission_probs, 
     assuming all the probabilities are in log-scale (similar to hw)
     """
 
-    # TODO: fix that it doesn't work when converted to log-scale
-    # transition_probs = np.log(transition_probs)
-    # m_emission_probs = np.log(m_emission_probs)
-    # i_emission_probs = np.log(i_emission_probs)
-
-    transition_probs = preprocess_probabilities(transition_probs)
-    m_emission_probs = preprocess_probabilities(m_emission_probs)
-    i_emission_probs = preprocess_probabilities(i_emission_probs)
-
     n = len(query)
-    amino_to_index = {
-        "A": 0, "R": 1, "N": 2, "D": 3, "C": 4, "Q": 5, "E": 6, "G": 7, 
-        "H": 8, "I": 9, "L": 10, "K": 11, "M": 12, "F": 13, "P": 14, 
-        "S": 15, "T": 16, "W": 17, "Y": 18, "V": 19
-    }
+    final_max_score = float('-inf')
 
-    m = {
-        "M": [[float("-inf")] * (n + 1) for _ in range(max_length + 1)],
-        "I": [[float("-inf")] * (n + 1) for _ in range(max_length + 1)],
-        "D": [[float("-inf")] * (n + 1) for _ in range(max_length + 1)]
-    }
+    for start in range(len(query)):
+        new_query = query[start:start+max_length]
+        n = min(len(new_query), max_length)
 
-    m["M"][0][0] = 0
+        if len(new_query) < max_length and start != 0:
+            break
 
-    # iterate over all the match states
-    for i in range(1, max_length + 1):
-        # iterate over the pos in the query sequence
-        for j in range(1, n + 1):
-            amino = query[j - 1]
-            amino_index = amino_to_index.get(amino, -1)
+        # i, j
+        m = {
+            "M": [[float("-inf")] * (n+1) for _ in range(max_length+1)], 
+            "I": [[float("-inf")] * (n+1) for _ in range(max_length+1)],
+            "D": [[float("-inf")] * (n+1) for _ in range(max_length+1)]
+        }
 
-            # when a char in the query seq is not a valid amino acid
-            if amino_index == -1:
-                # TODO: throw an erro maybe?
-                continue
+        tb = {
+            "M": [[float("-inf")] * (n+1) for _ in range(max_length+1)],
+            "I": [[float("-inf")] * (n+1) for _ in range(max_length+1)],
+            "D": [[float("-inf")] * (n+1) for _ in range(max_length+1)]
+        }
+
+        # initialize
+        m["M"][0][0] = 0
+
+        amino_to_index = {
+            "A": 0, "R": 1, "N": 2, "D": 3, "C": 4, "Q": 5, "E": 6, "G": 7, 
+            "H": 8, "I": 9, "L": 10, "K": 11, "M": 12, "F": 13, "P": 14, 
+            "S": 15, "T": 16, "W": 17, "Y": 18, "V": 19
+        }
+
+        for i in range(1, n+1): # i == sequence number, not index (paper)
+            query_index = i
+            for j in range(max_length+1): # j == actual state num (paper)
+                state_index = j
+                # MATCH STATE
+                if state_index > 0:
+                    cur_index = (3 * (j-1)) + 2
+                    amino = new_query[query_index-1]
+                    amino_acid = amino_to_index[amino]
+                    m_emission_p = m_emission_probs[j][amino_acid]
+                
+                    # from M
+                    prev_index = cur_index - 3
+                    transition_p = transition_probs[prev_index][cur_index]
+                    prev_m = m["M"][state_index-1][query_index-1] + transition_p
+
+                    # from I
+                    prev_index = cur_index - 1
+                    transition_p = transition_probs[prev_index][cur_index]
+                    prev_i = m["I"][state_index-1][query_index-1] + transition_p
+
+                    # from D
+                    prev_index = cur_index - 2
+                    transition_p = transition_probs[prev_index][cur_index]
+                    prev_d = m["D"][state_index-1][query_index-1] + transition_p
+
+                    max_score = max(prev_m, prev_i, prev_d)
+                    m["M"][state_index][query_index] = max_score + m_emission_p
+
+                    if max_score == prev_m:
+                        tb["M"][state_index][query_index] = "M"
+                    elif max_score == prev_i:
+                        tb["M"][state_index][query_index] = "I"
+                    elif max_score == prev_d:
+                        # print(prev_m, prev_i, prev_d)
+                        # print(m_emission_p)
+                        tb["M"][state_index][query_index] = "D"
+
+                # INSERTION STATE
+                cur_index = (3 * j) + 1
+                amino = new_query[query_index-1]
+                amino_acid = amino_to_index[amino]
+                emission_p = i_emission_probs[j][amino_acid]
+                
+                # from M
+                if state_index == 0:
+                    prev_m = 0
+                else:
+                    prev_index = cur_index - 2
+                    transition_p = transition_probs[prev_index][cur_index]
+                    prev_m = m["M"][state_index][query_index-1] + transition_p
+
+                # from I
+                if query_index == 0:
+                    prev_i = 0
+                else:
+                    prev_index = cur_index
+                    transition_p = transition_probs[prev_index][cur_index]
+                    prev_i = m["I"][state_index][query_index-1] + transition_p
+
+                # from D
+                if state_index == 0:
+                    prev_d = 0
+                else:
+                    prev_index = cur_index - 1
+                    transition_p = transition_probs[prev_index][cur_index]
+                    prev_d = m["D"][state_index][query_index-1] + transition_p
+
+                max_score = max(prev_m, prev_i, prev_d)
+                m["I"][state_index][query_index] = max_score + emission_p
+
+                if max_score == prev_m:
+                    tb["I"][state_index][query_index] = "M"
+                elif max_score == prev_i:
+                    tb["I"][state_index][query_index] = "I"
+                elif max_score == prev_d:
+                    tb["I"][state_index][query_index] = "D"
+
+                # DELETE STATE
+                if state_index > 0:
+                    cur_index = (3 * (j-1)) + 3
+
+                    # from M
+                    prev_index = cur_index - 4
+                    transition_p = transition_probs[prev_index][cur_index]
+                    prev_m = m["M"][state_index-1][query_index] + transition_p
+
+                    # from I
+                    prev_index = cur_index - 2
+                    transition_p = transition_probs[prev_index][cur_index]
+                    prev_i = m["I"][state_index-1][query_index] + transition_p
+
+                    # from D
+                    prev_index = cur_index - 3
+                    transition_p = transition_probs[prev_index][cur_index]
+                    prev_d = m["D"][state_index-1][query_index] + transition_p
+
+                    max_score = max(prev_m, prev_i, prev_d)
+                    m["D"][state_index][query_index] = max_score
+
+                    if max_score == prev_m:
+                        tb["D"][state_index][query_index] = "M"
+                    elif max_score == prev_i:
+                        tb["D"][state_index][query_index] = "I"
+                    elif max_score == prev_d:
+                        tb["D"][state_index][query_index] = "D"
             
-            # match
-            if 0 <= amino_index < m_emission_probs.shape[1]:
-                m["M"][i][j] = max(
-                    # M -> M, score = prev_match + weight going from prev match to curr match
-                    m["M"][i - 1][j - 1] + transition_probs[i - 1][i], 
-                    # I -> M
-                    m["I"][i - 1][j - 1] + transition_probs[max_length + i - 1][i], 
-                    # D -> M
-                    m["D"][i - 1][j - 1] + transition_probs[2 * max_length + i - 1][i] 
-                ) + m_emission_probs[i][amino_index]
+        max_m = m["M"][-1][-1]
+        max_i = m["I"][-1][-1]
+        max_d = m["D"][-1][-1]
 
-            # insertion
-            if 0 <= amino_index < i_emission_probs.shape[1]:
-                m["I"][i][j] = max(
-                    # M -> I
-                    m["M"][i][j - 1] + transition_probs[i][max_length + i],  
-                    # I -> I
-                    m["I"][i][j - 1] + transition_probs[max_length + i][max_length + i] 
-                ) + i_emission_probs[i, amino_index]
-            
-            # deletion
-            m["D"][i][j] = max(
-                # M -> D
-                m["M"][i - 1][j] + transition_probs[i - 1][2 * max_length + i],
-                # D -> D
-                m["D"][i - 1][j] + transition_probs[2 * max_length + i - 1][2 * max_length + i] 
-            )
+        max_score = max(max_m, max_i, max_d)
+        if max_score > final_max_score:
+            final_max_score = max_score
 
-    print(f'the viterbi matrix is the following: {m}')
-    
-    final_score = max(
-        m["M"][max_length][n],
-        m["I"][max_length][n],
-        m["D"][max_length][n]
-    )
-
-    return final_score
+    return final_max_score
 
 
 def main():
