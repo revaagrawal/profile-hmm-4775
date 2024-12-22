@@ -11,8 +11,24 @@ To build the profile HMM (from directory hmmer):
 
 To search the profile HMM (from directory hmmer):
   `bash threshold_tests.sh`
+
 ### PSI-BLAST 
-  todo
+  `brew install blast`
+  
+  `makeblastdb -version`
+  - makeblastdb: 2.16.0+
+
+  `psiblast -version`
+  - psiblast: 2.16.0+
+
+  To build BLAST-compatible database:
+  `makeblastdb -in training_set.fasta -dbtype prot -out target_db`
+
+  To run PSI-BLAST, call:
+  `psiblast -query complete_sequences.fasta -db target_db -num_iterations 3 -out [output txt file name] -outfmt 7 -evalue 0.001 -num_threads 4`
+  
+  - user-defined parameters to adjust: `num_iterations`, `evalue`, `num_threads`
+
   
 # To Run the Reimplemention:
 `pip install numpy`
