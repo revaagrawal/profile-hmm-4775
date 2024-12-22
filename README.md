@@ -2,10 +2,18 @@
 
 
 # To Run the Benchmarking:
+### HMMer
+`brew install hmmer`
+- version 3.4
 
-todo
+To build the profile HMM (from directory hmmer):
+  `bash build_models.sh`
 
-
+To search the profile HMM (from directory hmmer):
+  `bash threshold_tests.sh`
+### PSI-BLAST 
+  todo
+  
 # To Run the Reimplemention:
 `pip install numpy`
 
