@@ -14,8 +14,10 @@ To search the profile HMM (from directory hmmer):
 
 ### PSI-BLAST 
   `brew install blast`
+  
   `makeblastdb -version`
   - makeblastdb: 2.16.0+
+
   `psiblast -version`
   - psiblast: 2.16.0+
 
