@@ -3,7 +3,7 @@
 
 # To Run the Benchmarking:
 ### HMMer
-brew install hmmer
+`brew install hmmer`
 - version 3.4
 
 To build the profile HMM (from directory hmmer):
